@@ -1,0 +1,117 @@
+[
+    {
+        "key": "group_paving_collection_fields",
+        "title": "Коллекция тротуарной плитки",
+        "fields": [
+            {
+                "key": "field_paving_collection_gallery",
+                "label": "Галерея",
+                "name": "gallery",
+                "aria-label": "",
+                "type": "gallery",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "array",
+                "library": "all",
+                "min": "",
+                "max": "",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": "",
+                "insert": "append",
+                "preview_size": "medium"
+            },
+            {
+                "key": "field_paving_collection_price",
+                "label": "Цена",
+                "name": "price",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "Введите цену в любом нужном формате, например: от 1170 ₽ до 1505 ₽",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "33",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "allow_in_bindings": 0,
+                "placeholder": "от 1170 ₽ до 1505 ₽",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_paving_collection_tooltip",
+                "label": "Текст под знаком вопроса",
+                "name": "tooltip_text",
+                "aria-label": "",
+                "type": "textarea",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "67",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "rows": 3,
+                "placeholder": "",
+                "new_lines": ""
+            },
+            {
+                "key": "field_paving_collection_form",
+                "label": "Форма",
+                "name": "form",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "Значение будет использоваться как название таба на странице.",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "allow_in_bindings": 0,
+                "placeholder": "Например: Кирпичик",
+                "prepend": "",
+                "append": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "paving_collection"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "",
+        "show_in_rest": 1,
+        "modified": 1784870400
+    }
+]

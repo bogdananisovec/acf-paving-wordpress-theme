@@ -1,0 +1,334 @@
+[
+  {
+    "key": "group_site_form_master_visit",
+    "title": "Форма: бесплатный выезд мастера",
+    "fields": [
+      {
+        "key": "field_site_form_id",
+        "label": "form_id",
+        "name": "form_id",
+        "type": "text",
+        "instructions": "Уникальный ID формы. Используется в глобальных кнопках для открытия этой формы. Только латинские буквы, цифры, дефисы и подчёркивания.",
+        "required": 1,
+        "wrapper": {
+          "width": "50",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "maxlength": "",
+        "placeholder": "master-visit",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_site_form_is_active",
+        "label": "Активна",
+        "name": "is_active",
+        "type": "true_false",
+        "instructions": "Отключённая форма не должна выводиться на сайте.",
+        "required": 0,
+        "wrapper": {
+          "width": "50",
+          "class": "",
+          "id": ""
+        },
+        "message": "",
+        "default_value": 1,
+        "ui": 1,
+        "ui_on_text": "Да",
+        "ui_off_text": "Нет"
+      },
+      {
+        "key": "field_site_form_heading",
+        "label": "Заголовок",
+        "name": "heading",
+        "type": "textarea",
+        "instructions": "Основной заголовок формы.",
+        "required": 0,
+        "wrapper": {
+          "width": "50",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "Закажите бесплатный выезд мастера!",
+        "maxlength": "",
+        "rows": 2,
+        "placeholder": "",
+        "new_lines": "br"
+      },
+      {
+        "key": "field_site_form_subheading",
+        "label": "Подзаголовок",
+        "name": "subheading",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "wrapper": {
+          "width": "50",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "Привезём образцы плит для подбора",
+        "maxlength": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_site_form_phone_step_title",
+        "label": "Шаг 1 — заголовок",
+        "name": "phone_step_title",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "wrapper": {
+          "width": "50",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "Введите ваш номер телефона",
+        "maxlength": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_site_form_phone_placeholder",
+        "label": "Placeholder телефона",
+        "name": "phone_placeholder",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "wrapper": {
+          "width": "50",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "+7 (999) 999-99-99",
+        "maxlength": "",
+        "placeholder": "+7 (999) 999-99-99",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_site_form_contact_step_title",
+        "label": "Шаг 2 — заголовок",
+        "name": "contact_step_title",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "wrapper": {
+          "width": "100",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "Какой способ связи удобнее?",
+        "maxlength": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_site_form_contact_methods",
+        "label": "Способы связи",
+        "name": "contact_methods",
+        "type": "repeater",
+        "instructions": "Варианты связи для этой конкретной формы.",
+        "required": 0,
+        "wrapper": {
+          "width": "100",
+          "class": "",
+          "id": ""
+        },
+        "layout": "table",
+        "pagination": 0,
+        "min": 0,
+        "max": 0,
+        "collapsed": "field_site_form_contact_method_label",
+        "button_label": "Добавить способ связи",
+        "rows_per_page": 20,
+        "sub_fields": [
+          {
+            "key": "field_site_form_contact_method_label",
+            "label": "Название",
+            "name": "label",
+            "type": "text",
+            "required": 1,
+            "wrapper": {
+              "width": "30",
+              "class": "",
+              "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "Телеграм",
+            "prepend": "",
+            "append": "",
+            "parent_repeater": "field_site_form_contact_methods"
+          },
+          {
+            "key": "field_site_form_contact_method_value",
+            "label": "Значение",
+            "name": "value",
+            "type": "text",
+            "required": 1,
+            "wrapper": {
+              "width": "25",
+              "class": "",
+              "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "telegram",
+            "prepend": "",
+            "append": "",
+            "parent_repeater": "field_site_form_contact_methods"
+          },
+          {
+            "key": "field_site_form_contact_method_icon",
+            "label": "Иконка",
+            "name": "icon",
+            "type": "image",
+            "required": 0,
+            "wrapper": {
+              "width": "25",
+              "class": "",
+              "id": ""
+            },
+            "return_format": "id",
+            "library": "all",
+            "preview_size": "thumbnail",
+            "parent_repeater": "field_site_form_contact_methods"
+          },
+          {
+            "key": "field_site_form_contact_method_default",
+            "label": "По умолчанию",
+            "name": "selected",
+            "type": "true_false",
+            "required": 0,
+            "wrapper": {
+              "width": "20",
+              "class": "",
+              "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "Да",
+            "ui_off_text": "Нет",
+            "parent_repeater": "field_site_form_contact_methods"
+          }
+        ]
+      },
+      {
+        "key": "field_site_form_privacy_text",
+        "label": "Текст согласия",
+        "name": "privacy_text",
+        "type": "wysiwyg",
+        "instructions": "Текст возле обязательного чекбокса согласия.",
+        "required": 0,
+        "wrapper": {
+          "width": "100",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "Я согласен(-на) на обработку моих персональных данных в соответствии с Согласием на обработку персональных данных и Политикой конфиденциальности",
+        "tabs": "visual",
+        "toolbar": "basic",
+        "media_upload": 0,
+        "delay": 0
+      },
+      {
+        "key": "field_site_form_submit_text",
+        "label": "Текст кнопки",
+        "name": "submit_text",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "wrapper": {
+          "width": "50",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "Оставить заявку",
+        "maxlength": "",
+        "placeholder": "Оставить заявку",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_site_form_success_message",
+        "label": "Сообщение после отправки",
+        "name": "success_message",
+        "type": "text",
+        "instructions": "Если пусто, можно использовать общее сообщение из глобальных настроек.",
+        "required": 0,
+        "wrapper": {
+          "width": "50",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "Спасибо! Мы скоро свяжемся с вами.",
+        "maxlength": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_site_form_css_class",
+        "label": "CSS-класс",
+        "name": "css_class",
+        "type": "text",
+        "instructions": "Необязательно. Дополнительный класс для этой формы.",
+        "required": 0,
+        "wrapper": {
+          "width": "50",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "",
+        "maxlength": "",
+        "placeholder": "form--master-visit",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_site_form_template_name",
+        "label": "Имя PHP-шаблона",
+        "name": "template_name",
+        "type": "text",
+        "instructions": "Имя отдельного файла формы без расширения. Например: form-master-visit для template-parts/forms/form-master-visit.php.",
+        "required": 1,
+        "wrapper": {
+          "width": "50",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "form-master-visit",
+        "maxlength": "",
+        "placeholder": "form-master-visit",
+        "prepend": "",
+        "append": ""
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "post_type",
+          "operator": "==",
+          "value": "site_form"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Поля уникальной формы «Бесплатный выезд мастера».",
+    "show_in_rest": 0
+  }
+]

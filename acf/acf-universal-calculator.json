@@ -1,0 +1,1500 @@
+[
+    {
+        "key": "group_universal_calculator",
+        "title": "Калькулятор — универсальный конструктор",
+        "fields": [
+            {
+                "key": "field_calc_tab_general",
+                "label": "Общие настройки",
+                "name": "",
+                "aria-label": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0
+            },
+            {
+                "key": "field_calc_admin_title",
+                "label": "Название калькулятора для админки",
+                "name": "calculator_admin_title",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": ""
+            },
+            {
+                "key": "field_calc_theme",
+                "label": "Тема оформления",
+                "name": "calculator_theme",
+                "aria-label": "",
+                "type": "select",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "25",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "light": "Светлая",
+                    "dark": "Тёмная"
+                },
+                "default_value": "light",
+                "return_format": "value",
+                "multiple": 0,
+                "allow_null": 0,
+                "ui": 1,
+                "ajax": 0,
+                "placeholder": ""
+            },
+            {
+                "key": "field_calc_section_background",
+                "label": "Фон секции",
+                "name": "section_background",
+                "aria-label": "",
+                "type": "select",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "25",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "": "Не задавать",
+                    "white": "Белый фон",
+                    "black": "Чёрный фон"
+                },
+                "default_value": "",
+                "return_format": "value",
+                "multiple": 0,
+                "allow_null": 0,
+                "ui": 1,
+                "ajax": 0,
+                "placeholder": ""
+            },
+            {
+                "key": "field_calc_title",
+                "label": "Заголовок",
+                "name": "calculator_title",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": ""
+            },
+            {
+                "key": "field_calc_description",
+                "label": "Описание",
+                "name": "calculator_description",
+                "aria-label": "",
+                "type": "textarea",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "rows": 4,
+                "new_lines": "br",
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": ""
+            },
+            {
+                "key": "field_calc_section_id",
+                "label": "ID секции",
+                "name": "section_id",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": ""
+            },
+            {
+                "key": "field_calc_section_class",
+                "label": "CSS-класс секции",
+                "name": "section_class",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": ""
+            },
+            {
+                "key": "field_calc_show_progress",
+                "label": "Показывать прогресс",
+                "name": "show_progress",
+                "aria-label": "",
+                "type": "true_false",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "message": "",
+                "default_value": 1,
+                "ui": 1,
+                "ui_on_text": "Да",
+                "ui_off_text": "Нет"
+            },
+            {
+                "key": "field_calc_show_result_panel",
+                "label": "Показывать блок «Ваш расчёт»",
+                "name": "show_result_panel",
+                "aria-label": "",
+                "type": "true_false",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "message": "",
+                "default_value": 1,
+                "ui": 1,
+                "ui_on_text": "Да",
+                "ui_off_text": "Нет"
+            },
+            {
+                "key": "field_calc_tab_pricing",
+                "label": "Расчёт стоимости",
+                "name": "",
+                "aria-label": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0
+            },
+            {
+                "key": "field_calc_base_price",
+                "label": "Базовая стоимость",
+                "name": "base_price",
+                "aria-label": "",
+                "type": "number",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "25",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": 0,
+                "min": 0,
+                "max": "",
+                "step": 1,
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_calc_min_price",
+                "label": "Минимальная стоимость",
+                "name": "minimum_price",
+                "aria-label": "",
+                "type": "number",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "25",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": 0,
+                "min": 0,
+                "max": "",
+                "step": 1,
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_calc_max_price",
+                "label": "Максимальная стоимость",
+                "name": "maximum_price",
+                "aria-label": "",
+                "type": "number",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "25",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "min": 0,
+                "max": "",
+                "step": 1,
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_calc_rounding",
+                "label": "Округление результата",
+                "name": "price_rounding",
+                "aria-label": "",
+                "type": "select",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "25",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "none": "Не округлять",
+                    "10": "До 10",
+                    "100": "До 100",
+                    "1000": "До 1 000"
+                },
+                "default_value": "1000",
+                "return_format": "value",
+                "multiple": 0,
+                "allow_null": 0,
+                "ui": 1,
+                "ajax": 0,
+                "placeholder": ""
+            },
+            {
+                "key": "field_calc_price_prefix",
+                "label": "Префикс цены",
+                "name": "price_prefix",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "25",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "от",
+                "maxlength": "",
+                "placeholder": ""
+            },
+            {
+                "key": "field_calc_currency",
+                "label": "Валюта / суффикс",
+                "name": "price_suffix",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "25",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "₽",
+                "maxlength": "",
+                "placeholder": ""
+            },
+            {
+                "key": "field_calc_number_format",
+                "label": "Формат числа",
+                "name": "number_format",
+                "aria-label": "",
+                "type": "select",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "25",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "space": "247 000",
+                    "none": "247000"
+                },
+                "default_value": "space",
+                "return_format": "value",
+                "multiple": 0,
+                "allow_null": 0,
+                "ui": 1,
+                "ajax": 0,
+                "placeholder": ""
+            },
+            {
+                "key": "field_calc_tab_navigation",
+                "label": "Кнопки и навигация",
+                "name": "",
+                "aria-label": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0
+            },
+            {
+                "key": "field_calc_next_text",
+                "label": "Текст кнопки «Далее»",
+                "name": "next_button_text",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "33",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Далее",
+                "maxlength": "",
+                "placeholder": ""
+            },
+            {
+                "key": "field_calc_back_text",
+                "label": "Текст кнопки «Назад»",
+                "name": "back_button_text",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "33",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Назад",
+                "maxlength": "",
+                "placeholder": ""
+            },
+            {
+                "key": "field_calc_last_step_text",
+                "label": "Текст последнего шага",
+                "name": "last_step_label",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "34",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Последний шаг",
+                "maxlength": "",
+                "placeholder": ""
+            },
+            {
+                "key": "field_calc_tab_result",
+                "label": "Блок «Ваш расчёт»",
+                "name": "",
+                "aria-label": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0
+            },
+            {
+                "key": "field_calc_result_title",
+                "label": "Заголовок блока",
+                "name": "result_title",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Ваш расчёт",
+                "maxlength": "",
+                "placeholder": ""
+            },
+            {
+                "key": "field_calc_result_icon",
+                "label": "Иконка результата",
+                "name": "result_icon",
+                "aria-label": "",
+                "type": "image",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": { "width": "", "class": "", "id": "" },
+                "return_format": "id",
+                "library": "all",
+                "preview_size": "thumbnail",
+                "mime_types": "svg"
+            },
+            {
+                "key": "field_calc_price_label",
+                "label": "Подпись над стоимостью",
+                "name": "price_label",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Предварительная стоимость:",
+                "maxlength": "",
+                "placeholder": ""
+            },
+            {
+                "key": "field_calc_price_description",
+                "label": "Описание под стоимостью",
+                "name": "price_description",
+                "aria-label": "",
+                "type": "textarea",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "rows": 4,
+                "new_lines": "br",
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": ""
+            },
+            {
+                "key": "field_calc_result_button",
+                "label": "Глобальная кнопка",
+                "name": "global_button_id",
+                "aria-label": "",
+                "type": "select",
+                "instructions": "Выберите кнопку из глобальных настроек сайта.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {},
+                "default_value": "",
+                "return_format": "value",
+                "multiple": 0,
+                "allow_null": 1,
+                "ui": 1,
+                "ajax": 0,
+                "placeholder": "Выберите кнопку"
+            },
+            {
+                "key": "field_calc_result_button_text_override",
+                "label": "Текст кнопки для этого калькулятора",
+                "name": "result_button_text_override",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "Оставьте пустым, чтобы использовать текст глобальной кнопки.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": { "width": "", "class": "", "id": "" },
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": ""
+            },
+            {
+                "key": "field_calc_consent_text",
+                "label": "Текст согласия",
+                "name": "consent_text",
+                "aria-label": "",
+                "type": "wysiwyg",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "tabs": "all",
+                "toolbar": "basic",
+                "media_upload": 0,
+                "delay": 0
+            },
+            {
+                "key": "field_calc_consent_icon",
+                "label": "Иконка согласия",
+                "name": "consent_icon",
+                "aria-label": "",
+                "type": "image",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": { "width": "", "class": "", "id": "" },
+                "return_format": "id",
+                "library": "all",
+                "preview_size": "thumbnail",
+                "mime_types": "svg"
+            },
+            {
+                "key": "field_calc_use_last_step_badge",
+                "label": "Отдельная подпись последнего шага",
+                "name": "use_last_step_badge",
+                "aria-label": "",
+                "type": "true_false",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": { "width": "", "class": "", "id": "" },
+                "message": "",
+                "default_value": 0,
+                "ui": 1,
+                "ui_on_text": "Да",
+                "ui_off_text": "Нет"
+            },
+            {
+                "key": "field_calc_tab_steps",
+                "label": "Шаги калькулятора",
+                "name": "",
+                "aria-label": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0
+            },
+            {
+                "key": "field_calc_steps",
+                "label": "Шаги",
+                "name": "calculator_steps",
+                "aria-label": "",
+                "type": "repeater",
+                "instructions": "Шаги выводятся строго последовательно в указанном порядке.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "min": 1,
+                "max": 0,
+                "layout": "block",
+                "button_label": "Добавить шаг",
+                "collapsed": "field_calc_step_admin_title",
+                "rows_per_page": 20,
+                "sub_fields": [
+                    {
+                        "key": "field_calc_step_admin_title",
+                        "label": "Название шага для админки",
+                        "name": "admin_title",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "40",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": ""
+                    },
+                    {
+                        "key": "field_calc_step_id",
+                        "label": "ID шага",
+                        "name": "step_id",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "Латиницей, например: area, zone, foundation.",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "30",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": ""
+                    },
+                    {
+                        "key": "field_calc_step_type",
+                        "label": "Тип шага",
+                        "name": "step_type",
+                        "aria-label": "",
+                        "type": "select",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "30",
+                            "class": "",
+                            "id": ""
+                        },
+                        "choices": {
+                            "number": "Числовое поле",
+                            "single_choice": "Одиночный выбор",
+                            "multiple_choice": "Множественный выбор",
+                            "text": "Текстовое поле",
+                            "phone": "Телефон",
+                            "email": "Email",
+                            "contacts": "Контактный финальный шаг"
+                        },
+                        "default_value": "single_choice",
+                        "return_format": "value",
+                        "multiple": 0,
+                        "allow_null": 0,
+                        "ui": 1,
+                        "ajax": 0,
+                        "placeholder": ""
+                    },
+                    {
+                        "key": "field_calc_step_title",
+                        "label": "Заголовок шага",
+                        "name": "title",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "60",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": ""
+                    },
+                    {
+                        "key": "field_calc_step_description",
+                        "label": "Подсказка / описание",
+                        "name": "description",
+                        "aria-label": "",
+                        "type": "textarea",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "40",
+                            "class": "",
+                            "id": ""
+                        },
+                        "rows": 3,
+                        "new_lines": "br",
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": ""
+                    },
+                    {
+                        "key": "field_calc_step_required",
+                        "label": "Обязательный шаг",
+                        "name": "required",
+                        "aria-label": "",
+                        "type": "true_false",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "33",
+                            "class": "",
+                            "id": ""
+                        },
+                        "message": "",
+                        "default_value": 1,
+                        "ui": 1,
+                        "ui_on_text": "Да",
+                        "ui_off_text": "Нет"
+                    },
+                    {
+                        "key": "field_calc_step_show_in_result",
+                        "label": "Показывать в блоке «Ваш расчёт»",
+                        "name": "show_in_result",
+                        "aria-label": "",
+                        "type": "true_false",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "33",
+                            "class": "",
+                            "id": ""
+                        },
+                        "message": "",
+                        "default_value": 1,
+                        "ui": 1,
+                        "ui_on_text": "Да",
+                        "ui_off_text": "Нет"
+                    },
+                    {
+                        "key": "field_calc_step_result_label",
+                        "label": "Подпись в результате",
+                        "name": "result_label",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "34",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": ""
+                    },
+                    {
+                        "key": "field_calc_number_placeholder",
+                        "label": "Placeholder",
+                        "name": "number_placeholder",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": [
+                            [
+                                {
+                                    "field": "field_calc_step_type",
+                                    "operator": "==",
+                                    "value": "number"
+                                }
+                            ]
+                        ],
+                        "wrapper": {
+                            "width": "25",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": ""
+                    },
+                    {
+                        "key": "field_calc_number_unit",
+                        "label": "Единица измерения",
+                        "name": "number_unit",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": [
+                            [
+                                {
+                                    "field": "field_calc_step_type",
+                                    "operator": "==",
+                                    "value": "number"
+                                }
+                            ]
+                        ],
+                        "wrapper": {
+                            "width": "25",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "м²"
+                    },
+                    {
+                        "key": "field_calc_number_min",
+                        "label": "Минимум",
+                        "name": "number_min",
+                        "aria-label": "",
+                        "type": "number",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": [
+                            [
+                                {
+                                    "field": "field_calc_step_type",
+                                    "operator": "==",
+                                    "value": "number"
+                                }
+                            ]
+                        ],
+                        "wrapper": {
+                            "width": "25",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "min": "",
+                        "max": "",
+                        "step": 1,
+                        "prepend": "",
+                        "append": ""
+                    },
+                    {
+                        "key": "field_calc_number_max",
+                        "label": "Максимум",
+                        "name": "number_max",
+                        "aria-label": "",
+                        "type": "number",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": [
+                            [
+                                {
+                                    "field": "field_calc_step_type",
+                                    "operator": "==",
+                                    "value": "number"
+                                }
+                            ]
+                        ],
+                        "wrapper": {
+                            "width": "25",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "min": "",
+                        "max": "",
+                        "step": 1,
+                        "prepend": "",
+                        "append": ""
+                    },
+                    {
+                        "key": "field_calc_number_price_per_unit",
+                        "label": "Цена за единицу",
+                        "name": "number_price_per_unit",
+                        "aria-label": "",
+                        "type": "number",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": [
+                            [
+                                {
+                                    "field": "field_calc_step_type",
+                                    "operator": "==",
+                                    "value": "number"
+                                }
+                            ]
+                        ],
+                        "wrapper": {
+                            "width": "25",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": 0,
+                        "min": "",
+                        "max": "",
+                        "step": "0.01",
+                        "prepend": "",
+                        "append": ""
+                    },
+                    {
+                        "key": "field_calc_number_ranges",
+                        "label": "Быстрые варианты / диапазоны",
+                        "name": "number_ranges",
+                        "aria-label": "",
+                        "type": "repeater",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": [
+                            [
+                                {
+                                    "field": "field_calc_step_type",
+                                    "operator": "==",
+                                    "value": "number"
+                                }
+                            ]
+                        ],
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "min": 0,
+                        "max": 0,
+                        "layout": "table",
+                        "button_label": "Добавить вариант",
+                        "collapsed": "",
+                        "rows_per_page": 20,
+                        "sub_fields": [
+                            {
+                                "key": "field_calc_range_label",
+                                "label": "Название",
+                                "name": "label",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "35",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "placeholder": "50–100 м²"
+                            },
+                            {
+                                "key": "field_calc_range_value",
+                                "label": "Значение",
+                                "name": "value",
+                                "aria-label": "",
+                                "type": "number",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "20",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "min": "",
+                                "max": "",
+                                "step": "0.01",
+                                "prepend": "",
+                                "append": ""
+                            },
+                            {
+                                "key": "field_calc_range_price_type",
+                                "label": "Тип изменения стоимости",
+                                "name": "price_change_type",
+                                "aria-label": "",
+                                "type": "select",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "25",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "choices": {
+                                    "none": "Не влияет",
+                                    "add_fixed": "Добавить сумму",
+                                    "subtract_fixed": "Вычесть сумму",
+                                    "add_percent": "Добавить %",
+                                    "subtract_percent": "Вычесть %",
+                                    "multiply": "Умножить стоимость",
+                                    "set_fixed": "Установить стоимость",
+                                    "price_per_unit": "Цена за единицу"
+                                },
+                                "default_value": "none",
+                                "return_format": "value",
+                                "multiple": 0,
+                                "allow_null": 0,
+                                "ui": 1,
+                                "ajax": 0,
+                                "placeholder": ""
+                            },
+                            {
+                                "key": "field_calc_range_price_value",
+                                "label": "Значение изменения",
+                                "name": "price_change_value",
+                                "aria-label": "",
+                                "type": "number",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "20",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": 0,
+                                "min": "",
+                                "max": "",
+                                "step": "0.01",
+                                "prepend": "",
+                                "append": ""
+                            }
+                        ]
+                    },
+                    {
+                        "key": "field_calc_choice_options",
+                        "label": "Варианты ответа",
+                        "name": "options",
+                        "aria-label": "",
+                        "type": "repeater",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": [
+                            [
+                                {
+                                    "field": "field_calc_step_type",
+                                    "operator": "==",
+                                    "value": "single_choice"
+                                }
+                            ],
+                            [
+                                {
+                                    "field": "field_calc_step_type",
+                                    "operator": "==",
+                                    "value": "multiple_choice"
+                                }
+                            ]
+                        ],
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "min": 1,
+                        "max": 0,
+                        "layout": "block",
+                        "button_label": "Добавить вариант",
+                        "collapsed": "field_calc_option_label",
+                        "rows_per_page": 20,
+                        "sub_fields": [
+                            {
+                                "key": "field_calc_option_label",
+                                "label": "Название",
+                                "name": "label",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "35",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "placeholder": ""
+                            },
+                            {
+                                "key": "field_calc_option_value",
+                                "label": "Служебное значение",
+                                "name": "value",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "Латиницей, например: old_tile.",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "25",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "placeholder": ""
+                            },
+                            {
+                                "key": "field_calc_option_icon",
+                                "label": "Иконка",
+                                "name": "icon",
+                                "aria-label": "",
+                                "type": "image",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "20",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "return_format": "id",
+                                "library": "all",
+                                "preview_size": "thumbnail",
+                                "min_width": "",
+                                "min_height": "",
+                                "min_size": "",
+                                "max_width": "",
+                                "max_height": "",
+                                "max_size": "",
+                                "mime_types": ""
+                            },
+                            {
+                                "key": "field_calc_option_default",
+                                "label": "По умолчанию",
+                                "name": "selected_by_default",
+                                "aria-label": "",
+                                "type": "true_false",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "20",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "message": "",
+                                "default_value": 0,
+                                "ui": 1,
+                                "ui_on_text": "Да",
+                                "ui_off_text": "Нет"
+                            },
+                            {
+                                "key": "field_calc_option_result_label",
+                                "label": "Подпись в результате",
+                                "name": "result_label",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "40",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "placeholder": ""
+                            },
+                            {
+                                "key": "field_calc_option_price_type",
+                                "label": "Тип изменения стоимости",
+                                "name": "price_change_type",
+                                "aria-label": "",
+                                "type": "select",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "35",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "choices": {
+                                    "none": "Не влияет",
+                                    "add_fixed": "Добавить сумму",
+                                    "subtract_fixed": "Вычесть сумму",
+                                    "add_percent": "Добавить %",
+                                    "subtract_percent": "Вычесть %",
+                                    "multiply": "Умножить стоимость",
+                                    "set_fixed": "Установить стоимость",
+                                    "price_per_unit": "Цена за единицу"
+                                },
+                                "default_value": "none",
+                                "return_format": "value",
+                                "multiple": 0,
+                                "allow_null": 0,
+                                "ui": 1,
+                                "ajax": 0,
+                                "placeholder": ""
+                            },
+                            {
+                                "key": "field_calc_option_price_value",
+                                "label": "Значение изменения",
+                                "name": "price_change_value",
+                                "aria-label": "",
+                                "type": "number",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "25",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": 0,
+                                "min": "",
+                                "max": "",
+                                "step": "0.01",
+                                "prepend": "",
+                                "append": ""
+                            }
+                        ]
+                    },
+                    {
+                        "key": "field_calc_input_placeholder",
+                        "label": "Placeholder поля",
+                        "name": "input_placeholder",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": [
+                            [
+                                {
+                                    "field": "field_calc_step_type",
+                                    "operator": "==",
+                                    "value": "text"
+                                }
+                            ],
+                            [
+                                {
+                                    "field": "field_calc_step_type",
+                                    "operator": "==",
+                                    "value": "phone"
+                                }
+                            ],
+                            [
+                                {
+                                    "field": "field_calc_step_type",
+                                    "operator": "==",
+                                    "value": "email"
+                                }
+                            ]
+                        ],
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": ""
+                    },
+                    {
+                        "key": "field_calc_contact_methods",
+                        "label": "Способы связи",
+                        "name": "contact_methods",
+                        "aria-label": "",
+                        "type": "repeater",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": [
+                            [
+                                {
+                                    "field": "field_calc_step_type",
+                                    "operator": "==",
+                                    "value": "contacts"
+                                }
+                            ]
+                        ],
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "min": 1,
+                        "max": 0,
+                        "layout": "table",
+                        "button_label": "Добавить способ связи",
+                        "collapsed": "",
+                        "rows_per_page": 20,
+                        "sub_fields": [
+                            {
+                                "key": "field_calc_contact_label",
+                                "label": "Название",
+                                "name": "label",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "35",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "placeholder": ""
+                            },
+                            {
+                                "key": "field_calc_contact_value",
+                                "label": "Значение",
+                                "name": "value",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "25",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "placeholder": "phone"
+                            },
+                            {
+                                "key": "field_calc_contact_icon",
+                                "label": "Иконка",
+                                "name": "icon",
+                                "aria-label": "",
+                                "type": "image",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "20",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "return_format": "id",
+                                "library": "all",
+                                "preview_size": "thumbnail",
+                                "min_width": "",
+                                "min_height": "",
+                                "min_size": "",
+                                "max_width": "",
+                                "max_height": "",
+                                "max_size": "",
+                                "mime_types": ""
+                            },
+                            {
+                                "key": "field_calc_contact_default",
+                                "label": "По умолчанию",
+                                "name": "selected_by_default",
+                                "aria-label": "",
+                                "type": "true_false",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "20",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "message": "",
+                                "default_value": 0,
+                                "ui": 1,
+                                "ui_on_text": "Да",
+                                "ui_off_text": "Нет"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "field_calc_contact_phone_label",
+                        "label": "Подпись телефона",
+                        "name": "contact_phone_label",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": [[{"field":"field_calc_step_type","operator":"==","value":"contacts"}]],
+                        "wrapper": { "width": "", "class": "", "id": "" },
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": ""
+                    },
+                    {
+                        "key": "field_calc_contact_phone_placeholder",
+                        "label": "Placeholder телефона",
+                        "name": "contact_phone_placeholder",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": [
+                            [
+                                {
+                                    "field": "field_calc_step_type",
+                                    "operator": "==",
+                                    "value": "contacts"
+                                }
+                            ]
+                        ],
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "+7 (999) 999-99-99",
+                        "maxlength": "",
+                        "placeholder": ""
+                    }
+                ]
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "calculator"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": [
+            "the_content",
+            "excerpt",
+            "discussion",
+            "comments",
+            "format",
+            "send-trackbacks"
+        ],
+        "active": true,
+        "description": "",
+        "show_in_rest": 0,
+        "modified": 1784899200
+    }
+]

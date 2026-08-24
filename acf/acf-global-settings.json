@@ -1,0 +1,1610 @@
+[
+    {
+        "key": "group_global_site_settings_v2",
+        "title": "Глобальные настройки сайта",
+        "fields": [
+            {
+                "key": "field_gss_tab_basic",
+                "label": "Основное",
+                "name": "",
+                "aria-label": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0,
+                "selected": 0
+            },
+            {
+                "key": "field_site_logo",
+                "label": "Логотип",
+                "name": "site_logo",
+                "aria-label": "",
+                "type": "image",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "33",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "id",
+                "library": "all",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": "",
+                "preview_size": "medium"
+            },
+            {
+                "key": "field_company_name",
+                "label": "Название компании",
+                "name": "company_name",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "33",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_company_tagline",
+                "label": "Краткое описание / дескриптор",
+                "name": "company_tagline",
+                "aria-label": "",
+                "type": "textarea",
+                "instructions": "Например: Дизайн интерьеров квартир и домов в Москве.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "33",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "allow_in_bindings": 1,
+                "rows": 2,
+                "placeholder": "",
+                "new_lines": "br"
+            },
+            {
+                "key": "field_gss_tab_localization",
+                "label": "Локализация",
+                "name": "",
+                "aria-label": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0,
+                "selected": 0
+            },
+            {
+                "key": "field_local_city_nominative",
+                "label": "Город - именительный",
+                "name": "local_city_nominative",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "Например: Москва. Шорткод: [city] или [city case=\"nominative\"].",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "33",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "Москва",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_local_city_genitive",
+                "label": "Город - родительный",
+                "name": "local_city_genitive",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "Например: Москвы. Шорткод: [city case=\"genitive\"].",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "33",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "Москвы",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_local_city_dative",
+                "label": "Город - дательный",
+                "name": "local_city_dative",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "Например: Москве. Шорткод: [city case=\"dative\"].",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "33",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "Москве",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_local_city_accusative",
+                "label": "Город - винительный",
+                "name": "local_city_accusative",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "Например: Москву. Шорткод: [city case=\"accusative\"].",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "33",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "Москву",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_local_city_instrumental",
+                "label": "Город - творительный",
+                "name": "local_city_instrumental",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "Например: Москвой. Шорткод: [city case=\"instrumental\"].",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "33",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "Москвой",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_local_city_prepositional",
+                "label": "Город - предложный",
+                "name": "local_city_prepositional",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "Например: Москве. Шорткод: [city case=\"prepositional\"].",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "33",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "Москве",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_local_shortcode_address",
+                "label": "Адрес для шорткода",
+                "name": "local_shortcode_address",
+                "aria-label": "",
+                "type": "textarea",
+                "instructions": "Шорткод: [address]. Если пусто, используется общий адрес из вкладки Контакты.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "rows": 3,
+                "placeholder": "",
+                "new_lines": "br"
+            },
+            {
+                "key": "field_gss_tab_contacts",
+                "label": "Контакты",
+                "name": "",
+                "aria-label": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0,
+                "selected": 0
+            },
+            {
+                "key": "field_local_shortcode_phone",
+                "label": "Телефон — шапка и подвал",
+                "name": "local_shortcode_phone",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "Используется в шапке, подвале и шорткодах [phone], [phone_link], [phone_url].",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "33",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "+7 (999) 999-99-99",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_local_shortcode_phone_url",
+                "label": "Телефонная ссылка",
+                "name": "local_shortcode_phone_url",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "Необязательно. Можно указать +79999999999 или tel:+79999999999. Если пусто, ссылка собирается из телефона.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "33",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "+79999999999",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_header_phone_icon",
+                "label": "Иконка телефона — шапка",
+                "name": "header_phone_icon",
+                "aria-label": "",
+                "type": "image",
+                "instructions": "Иконка телефона для шапки сайта.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "id",
+                "library": "all",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": "",
+                "preview_size": "thumbnail"
+            },
+            {
+                "key": "field_footer_phone_icon",
+                "label": "Иконка телефона — подвал",
+                "name": "footer_phone_icon",
+                "aria-label": "",
+                "type": "image",
+                "instructions": "Иконка телефона для подвала сайта.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "id",
+                "library": "all",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": "",
+                "preview_size": "thumbnail"
+            },
+            {
+                "key": "field_work_hours",
+                "label": "Текст под телефоном",
+                "name": "work_hours",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "Используется под телефоном в шапке и подвале.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "33",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Ежедневно с 9:00 до 22:00",
+                "maxlength": "",
+                "placeholder": "Ежедневно с 9:00 до 22:00",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_site_email",
+                "label": "Почта — шапка и подвал",
+                "name": "site_email",
+                "aria-label": "",
+                "type": "email",
+                "instructions": "Контактная почта, которая выводится в шапке и подвале.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "33",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "example@gmail.com",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_header_email_icon",
+                "label": "Иконка почты — шапка",
+                "name": "header_email_icon",
+                "aria-label": "",
+                "type": "image",
+                "instructions": "Иконка почты для шапки сайта.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "id",
+                "library": "all",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": "",
+                "preview_size": "thumbnail"
+            },
+            {
+                "key": "field_footer_email_icon",
+                "label": "Иконка почты — подвал",
+                "name": "footer_email_icon",
+                "aria-label": "",
+                "type": "image",
+                "instructions": "Иконка почты для подвала сайта.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "id",
+                "library": "all",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": "",
+                "preview_size": "thumbnail"
+            },
+            {
+                "key": "field_show_copy_email_button",
+                "label": "Показывать кнопку «Скопировать почту»",
+                "name": "show_copy_email_button",
+                "aria-label": "",
+                "type": "true_false",
+                "instructions": "Управляет кнопкой одновременно в шапке и подвале.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "34",
+                    "class": "",
+                    "id": ""
+                },
+                "message": "",
+                "default_value": 1,
+                "ui": 1,
+                "ui_on_text": "Показывать",
+                "ui_off_text": "Скрыть"
+            },
+            {
+                "key": "field_contact_callback_button_id",
+                "label": "Кнопка «Заказать звонок» — шапка и подвал",
+                "name": "contact_callback_button_id",
+                "aria-label": "",
+                "type": "select",
+                "instructions": "Выберите активную кнопку из вкладки «Глобальные кнопки».",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": [],
+                "default_value": false,
+                "return_format": "value",
+                "multiple": 0,
+                "allow_null": 1,
+                "ui": 1,
+                "ajax": 0,
+                "placeholder": "Выберите глобальную кнопку"
+            },
+            {
+                "key": "field_office_name",
+                "label": "Название офиса",
+                "name": "office_name",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "Например: Краснодар, Головной офис.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "Краснодар, Головной офис",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_office_work_hours",
+                "label": "График работы офиса",
+                "name": "office_work_hours",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "Например: Ежедневно с 9:00 до 22:00.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "Ежедневно с 9:00 до 22:00",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_site_address",
+                "label": "Адрес",
+                "name": "site_address",
+                "aria-label": "",
+                "type": "textarea",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "33",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "rows": 3,
+                "placeholder": "",
+                "new_lines": "br"
+            },
+            {
+                "key": "field_social_links",
+                "label": "Социальные сети",
+                "name": "social_links",
+                "aria-label": "",
+                "type": "repeater",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "row",
+                "pagination": 0,
+                "min": 0,
+                "max": 0,
+                "collapsed": "field_social_link_admin_title",
+                "button_label": "Добавить соцсеть",
+                "rows_per_page": 20,
+                "sub_fields": [
+                    {
+                        "key": "field_social_link_admin_title",
+                        "label": "Название для админки",
+                        "name": "admin_title",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "Например: VK.",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "25",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "VK",
+                        "prepend": "",
+                        "append": "",
+                        "parent_repeater": "field_social_links"
+                    },
+                    {
+                        "key": "field_social_link_id",
+                        "label": "ID / slug",
+                        "name": "social_id",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "Например: vk, instagram, youtube.",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "25",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "vk",
+                        "prepend": "",
+                        "append": "",
+                        "parent_repeater": "field_social_links"
+                    },
+                    {
+                        "key": "field_social_link_label",
+                        "label": "Подпись",
+                        "name": "label",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "25",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "VK",
+                        "prepend": "",
+                        "append": "",
+                        "parent_repeater": "field_social_links"
+                    },
+                    {
+                        "key": "field_social_link_icon",
+                        "label": "Иконка",
+                        "name": "icon",
+                        "aria-label": "",
+                        "type": "image",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "25",
+                            "class": "",
+                            "id": ""
+                        },
+                        "return_format": "id",
+                        "library": "all",
+                        "preview_size": "thumbnail",
+                        "parent_repeater": "field_social_links",
+                        "min_width": "",
+                        "min_height": "",
+                        "min_size": "",
+                        "max_width": "",
+                        "max_height": "",
+                        "max_size": "",
+                        "mime_types": ""
+                    },
+                    {
+                        "key": "field_social_link_url",
+                        "label": "Ссылка",
+                        "name": "url",
+                        "aria-label": "",
+                        "type": "link",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "40",
+                            "class": "",
+                            "id": ""
+                        },
+                        "return_format": "array",
+                        "allow_in_bindings": 1,
+                        "parent_repeater": "field_social_links"
+                    },
+                    {
+                        "key": "field_social_link_is_active",
+                        "label": "Активна",
+                        "name": "is_active",
+                        "aria-label": "",
+                        "type": "true_false",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "20",
+                            "class": "",
+                            "id": ""
+                        },
+                        "message": "",
+                        "default_value": 1,
+                        "ui": 1,
+                        "ui_on_text": "Да",
+                        "ui_off_text": "Нет",
+                        "parent_repeater": "field_social_links"
+                    }
+                ]
+            },
+            {
+                "key": "field_gss_tab_ratings",
+                "label": "Рейтинги",
+                "name": "",
+                "aria-label": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0,
+                "selected": 0
+            },
+            {
+                "key": "field_rating_sources",
+                "label": "Источники рейтинга",
+                "name": "rating_sources",
+                "aria-label": "",
+                "type": "repeater",
+                "instructions": "Сервисы рейтингов, которые могут выводиться в шапке, первом экране и блоках доверия.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "row",
+                "pagination": 0,
+                "min": 0,
+                "max": 0,
+                "collapsed": "field_rating_source_admin_title",
+                "button_label": "Добавить источник",
+                "rows_per_page": 20,
+                "sub_fields": [
+                    {
+                        "key": "field_rating_source_admin_title",
+                        "label": "Название для админки",
+                        "name": "admin_title",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "Например: Яндекс Карты.",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "25",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "Яндекс Карты",
+                        "prepend": "",
+                        "append": "",
+                        "parent_repeater": "field_rating_sources"
+                    },
+                    {
+                        "key": "field_rating_source_id",
+                        "label": "ID / slug",
+                        "name": "source_id",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "Например: yandex, gis, google.",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "25",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "yandex",
+                        "prepend": "",
+                        "append": "",
+                        "parent_repeater": "field_rating_sources"
+                    },
+                    {
+                        "key": "field_rating_source_icon",
+                        "label": "Иконка сервиса",
+                        "name": "icon",
+                        "aria-label": "",
+                        "type": "image",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "25",
+                            "class": "",
+                            "id": ""
+                        },
+                        "return_format": "id",
+                        "library": "all",
+                        "preview_size": "thumbnail",
+                        "parent_repeater": "field_rating_sources",
+                        "min_width": "",
+                        "min_height": "",
+                        "min_size": "",
+                        "max_width": "",
+                        "max_height": "",
+                        "max_size": "",
+                        "mime_types": ""
+                    },
+                    {
+                        "key": "field_rating_source_value",
+                        "label": "Рейтинг",
+                        "name": "rating",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "Например: 5.0.",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "25",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "5.0",
+                        "prepend": "",
+                        "append": "",
+                        "parent_repeater": "field_rating_sources"
+                    },
+                    {
+                        "key": "field_rating_source_reviews_count",
+                        "label": "Количество отзывов",
+                        "name": "reviews_count",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "Например: 150 отзывов.",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "25",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "150 отзывов",
+                        "prepend": "",
+                        "append": "",
+                        "parent_repeater": "field_rating_sources"
+                    },
+                    {
+                        "key": "field_rating_source_link",
+                        "label": "Ссылка",
+                        "name": "link",
+                        "aria-label": "",
+                        "type": "url",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "25",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "",
+                        "parent_repeater": "field_rating_sources"
+                    },
+                    {
+                        "key": "field_rating_source_is_active",
+                        "label": "Активен",
+                        "name": "is_active",
+                        "aria-label": "",
+                        "type": "true_false",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "25",
+                            "class": "",
+                            "id": ""
+                        },
+                        "message": "",
+                        "default_value": 1,
+                        "ui": 1,
+                        "ui_on_text": "Да",
+                        "ui_off_text": "Нет",
+                        "parent_repeater": "field_rating_sources"
+                    }
+                ]
+            },
+            {
+                "key": "field_gss_tab_global_buttons",
+                "label": "Глобальные кнопки",
+                "name": "",
+                "aria-label": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0,
+                "selected": 0
+            },
+            {
+                "key": "field_global_buttons",
+                "label": "Глобальные кнопки",
+                "name": "global_buttons",
+                "aria-label": "",
+                "type": "repeater",
+                "instructions": "Создавай здесь кнопки один раз. В блоках сайта потом можно выбирать кнопку по button_id.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "row",
+                "pagination": 0,
+                "min": 0,
+                "max": 0,
+                "collapsed": "field_global_button_admin_title",
+                "button_label": "Добавить кнопку",
+                "rows_per_page": 20,
+                "sub_fields": [
+                    {
+                        "key": "field_global_button_admin_title",
+                        "label": "Название кнопки для админки",
+                        "name": "admin_title",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "Например: Консультация, Скопировать почту, Telegram.",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "33",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "Консультация",
+                        "prepend": "",
+                        "append": "",
+                        "parent_repeater": "field_global_buttons"
+                    },
+                    {
+                        "key": "field_global_button_id",
+                        "label": "button_id / slug",
+                        "name": "button_id",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "Уникальный ID для выбора кнопки в шаблонах: consultation, copy_email, telegram, calculate_price.",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "33",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "consultation",
+                        "prepend": "",
+                        "append": "",
+                        "parent_repeater": "field_global_buttons"
+                    },
+                    {
+                        "key": "field_global_button_text",
+                        "label": "Текст кнопки",
+                        "name": "text",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "34",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "Получить консультацию",
+                        "prepend": "",
+                        "append": "",
+                        "parent_repeater": "field_global_buttons"
+                    },
+                    {
+                        "key": "field_global_button_icon",
+                        "label": "Иконка кнопки",
+                        "name": "icon",
+                        "aria-label": "",
+                        "type": "image",
+                        "instructions": "Необязательно. Иконка хранится вместе с глобальной кнопкой и выводится во всех местах, где выбрана эта кнопка.",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "25",
+                            "class": "",
+                            "id": ""
+                        },
+                        "return_format": "id",
+                        "library": "all",
+                        "min_width": "",
+                        "min_height": "",
+                        "min_size": "",
+                        "max_width": "",
+                        "max_height": "",
+                        "max_size": "",
+                        "mime_types": "svg,png,jpg,jpeg,webp",
+                        "preview_size": "thumbnail",
+                        "parent_repeater": "field_global_buttons"
+                    },
+                    {
+                        "key": "field_global_button_type",
+                        "label": "Тип действия",
+                        "name": "type",
+                        "aria-label": "",
+                        "type": "select",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "33",
+                            "class": "",
+                            "id": ""
+                        },
+                        "choices": {
+                            "link": "Ссылка",
+                            "modal": "Модалка",
+                            "anchor": "Якорь",
+                            "phone": "Телефон",
+                            "email": "Email",
+                            "messenger": "Мессенджер",
+                            "copy_email": "Скопировать email"
+                        },
+                        "default_value": "link",
+                        "return_format": "value",
+                        "multiple": 0,
+                        "allow_null": 0,
+                        "ui": 1,
+                        "ajax": 0,
+                        "placeholder": "",
+                        "parent_repeater": "field_global_buttons"
+                    },
+                    {
+                        "key": "field_global_button_url",
+                        "label": "Ссылка / URL",
+                        "name": "url",
+                        "aria-label": "",
+                        "type": "url",
+                        "instructions": "Для типа действия: Ссылка.",
+                        "required": 0,
+                        "conditional_logic": [
+                            [
+                                {
+                                    "field": "field_global_button_type",
+                                    "operator": "==",
+                                    "value": "link"
+                                }
+                            ]
+                        ],
+                        "wrapper": {
+                            "width": "33",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "",
+                        "parent_repeater": "field_global_buttons"
+                    },
+                    {
+                        "key": "field_global_button_modal_id",
+                        "label": "ID модалки",
+                        "name": "modal_id",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "Например: consultation-modal.",
+                        "required": 0,
+                        "conditional_logic": [
+                            [
+                                {
+                                    "field": "field_global_button_type",
+                                    "operator": "==",
+                                    "value": "modal"
+                                }
+                            ]
+                        ],
+                        "wrapper": {
+                            "width": "33",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "consultation-modal",
+                        "prepend": "",
+                        "append": "",
+                        "parent_repeater": "field_global_buttons"
+                    },
+                    {
+                        "key": "field_global_button_anchor",
+                        "label": "Якорь",
+                        "name": "anchor",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "Например: #contacts.",
+                        "required": 0,
+                        "conditional_logic": [
+                            [
+                                {
+                                    "field": "field_global_button_type",
+                                    "operator": "==",
+                                    "value": "anchor"
+                                }
+                            ]
+                        ],
+                        "wrapper": {
+                            "width": "33",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "#contacts",
+                        "prepend": "",
+                        "append": "",
+                        "parent_repeater": "field_global_buttons"
+                    },
+                    {
+                        "key": "field_global_button_phone",
+                        "label": "Телефон",
+                        "name": "phone",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "Для типа действия: Телефон. Если поле пустое, можно использовать телефон из вкладки Контакты.",
+                        "required": 0,
+                        "conditional_logic": [
+                            [
+                                {
+                                    "field": "field_global_button_type",
+                                    "operator": "==",
+                                    "value": "phone"
+                                }
+                            ]
+                        ],
+                        "wrapper": {
+                            "width": "33",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "+74951234567",
+                        "prepend": "",
+                        "append": "",
+                        "parent_repeater": "field_global_buttons"
+                    },
+                    {
+                        "key": "field_global_button_email",
+                        "label": "Email",
+                        "name": "email",
+                        "aria-label": "",
+                        "type": "email",
+                        "instructions": "Для типа действия: Email / Скопировать email. Если поле пустое, можно использовать email из вкладки Контакты.",
+                        "required": 0,
+                        "conditional_logic": [
+                            [
+                                {
+                                    "field": "field_global_button_type",
+                                    "operator": "==",
+                                    "value": "email"
+                                }
+                            ],
+                            [
+                                {
+                                    "field": "field_global_button_type",
+                                    "operator": "==",
+                                    "value": "copy_email"
+                                }
+                            ]
+                        ],
+                        "wrapper": {
+                            "width": "33",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "parent_repeater": "field_global_buttons"
+                    },
+                    {
+                        "key": "field_global_button_messenger_id",
+                        "label": "messenger_id",
+                        "name": "messenger_id",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "Для типа действия: Мессенджер. Укажи ID из повторителя мессенджеров, например telegram.",
+                        "required": 0,
+                        "conditional_logic": [
+                            [
+                                {
+                                    "field": "field_global_button_type",
+                                    "operator": "==",
+                                    "value": "messenger"
+                                }
+                            ]
+                        ],
+                        "wrapper": {
+                            "width": "33",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "telegram",
+                        "prepend": "",
+                        "append": "",
+                        "parent_repeater": "field_global_buttons"
+                    },
+                    {
+                        "key": "field_global_button_css_class",
+                        "label": "CSS-класс кнопки",
+                        "name": "css_class",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "Необязательно.",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "33",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "button button--primary",
+                        "prepend": "",
+                        "append": "",
+                        "parent_repeater": "field_global_buttons"
+                    },
+                    {
+                        "key": "field_global_button_aria_label",
+                        "label": "ARIA-label",
+                        "name": "aria_label",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "Необязательно. Нужно для кнопок с коротким текстом или иконкой.",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "33",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "parent_repeater": "field_global_buttons"
+                    },
+                    {
+                        "key": "field_global_button_target_blank",
+                        "label": "Открывать в новой вкладке",
+                        "name": "target_blank",
+                        "aria-label": "",
+                        "type": "true_false",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "34",
+                            "class": "",
+                            "id": ""
+                        },
+                        "message": "",
+                        "default_value": 0,
+                        "ui": 1,
+                        "ui_on_text": "Да",
+                        "ui_off_text": "Нет",
+                        "parent_repeater": "field_global_buttons"
+                    },
+                    {
+                        "key": "field_global_button_rel",
+                        "label": "rel",
+                        "name": "rel",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "Необязательно. Например: nofollow noopener.",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "33",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "nofollow noopener",
+                        "prepend": "",
+                        "append": "",
+                        "parent_repeater": "field_global_buttons"
+                    },
+                    {
+                        "key": "field_global_button_analytics_label",
+                        "label": "Метка аналитики",
+                        "name": "analytics_label",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "Необязательно. Удобно для data-атрибутов и целей.",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "33",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "consultation_header",
+                        "prepend": "",
+                        "append": "",
+                        "parent_repeater": "field_global_buttons"
+                    },
+                    {
+                        "key": "field_global_button_is_active",
+                        "label": "Активна",
+                        "name": "is_active",
+                        "aria-label": "",
+                        "type": "true_false",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "34",
+                            "class": "",
+                            "id": ""
+                        },
+                        "message": "",
+                        "default_value": 1,
+                        "ui": 1,
+                        "ui_on_text": "Да",
+                        "ui_off_text": "Нет",
+                        "parent_repeater": "field_global_buttons"
+                    }
+                ]
+            },
+            {
+                "key": "field_gss_tab_leads",
+                "label": "Заявки",
+                "name": "",
+                "aria-label": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0,
+                "selected": 0
+            },
+            {
+                "key": "field_leads_email_enabled",
+                "label": "Отправлять заявки на email",
+                "name": "leads_email_enabled",
+                "aria-label": "",
+                "type": "true_false",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "25",
+                    "class": "",
+                    "id": ""
+                },
+                "message": "",
+                "default_value": 1,
+                "ui": 1,
+                "ui_on_text": "Да",
+                "ui_off_text": "Нет"
+            },
+            {
+                "key": "field_leads_email_to",
+                "label": "Email получателей",
+                "name": "leads_email_to",
+                "aria-label": "",
+                "type": "textarea",
+                "instructions": "Один или несколько email через запятую или с новой строки. Если пусто, будет использован email администратора сайта.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "rows": 3,
+                "placeholder": "lead@example.com",
+                "new_lines": ""
+            },
+            {
+                "key": "field_leads_email_subject",
+                "label": "Тема письма",
+                "name": "leads_email_subject",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "25",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Новая заявка с сайта",
+                "maxlength": "",
+                "placeholder": "Новая заявка с сайта",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_leads_telegram_enabled",
+                "label": "Отправлять заявки в Telegram",
+                "name": "leads_telegram_enabled",
+                "aria-label": "",
+                "type": "true_false",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "25",
+                    "class": "",
+                    "id": ""
+                },
+                "message": "",
+                "default_value": 0,
+                "ui": 1,
+                "ui_on_text": "Да",
+                "ui_off_text": "Нет"
+            },
+            {
+                "key": "field_leads_telegram_bot_token",
+                "label": "Telegram bot token",
+                "name": "leads_telegram_bot_token",
+                "aria-label": "",
+                "type": "password",
+                "instructions": "Токен бота из BotFather.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "placeholder": "123456:ABC...",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_leads_telegram_chat_id",
+                "label": "Telegram chat ID",
+                "name": "leads_telegram_chat_id",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "ID чата, группы или канала, куда отправлять заявки.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "25",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": -1001234567890,
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_leads_success_message",
+                "label": "Сообщение после отправки",
+                "name": "leads_success_message",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "Общий текст, если у конкретной формы не задан свой success message.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Спасибо! Мы скоро свяжемся с вами.",
+                "maxlength": "",
+                "placeholder": "Спасибо! Мы скоро свяжемся с вами.",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_gss_tab_footer",
+                "label": "Футер",
+                "name": "",
+                "aria-label": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0,
+                "selected": 0
+            },
+            {
+                "key": "field_footer_logo",
+                "label": "Логотип в футере",
+                "name": "footer_logo",
+                "aria-label": "",
+                "type": "image",
+                "instructions": "Необязательно. Если не заполнено, можно использовать основной логотип.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "25",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "id",
+                "library": "all",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": "",
+                "preview_size": "medium"
+            },
+            {
+                "key": "field_footer_copyright",
+                "label": "Политика конфиденциальности",
+                "name": "footer_privacy",
+                "aria-label": "",
+                "type": "link",
+                "instructions": "Например: © 2026 Design Interera. Все права защищены.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "25",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "array",
+                "allow_in_bindings": 1
+            },
+            {
+                "key": "field_6a3e515040742",
+                "label": "Согласие на обработку персональных данных",
+                "name": "footer_copyright",
+                "aria-label": "",
+                "type": "link",
+                "instructions": "Например: © 2026 Design Interera. Все права защищены.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "25",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "array",
+                "allow_in_bindings": 1
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "options_page",
+                    "operator": "==",
+                    "value": "globalnye-nastrojki-sajta"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "Глобальные настройки сайта: основные данные, контакты, рейтинги, глобальные кнопки и настройки футера.",
+        "show_in_rest": 0
+    }
+]

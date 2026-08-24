@@ -1,0 +1,2982 @@
+[
+    {
+        "key": "group_portfolio_page",
+        "title": "Страница: портфолио",
+        "fields": [
+            {
+                "key": "field_portfolio_page_sections",
+                "label": "Секции страницы",
+                "name": "page_sections",
+                "aria-label": "",
+                "type": "flexible_content",
+                "instructions": "Добавляйте секции и меняйте их порядок перетаскиванием.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layouts": {
+                    "layout_portfolio_hero": {
+                        "key": "layout_portfolio_hero",
+                        "name": "hero",
+                        "label": "Первый экран",
+                        "display": "block",
+                        "sub_fields": [
+                            {
+                                "key": "field_portfolio_hero_admin_title",
+                                "label": "Название блока для админки",
+                                "name": "admin_title",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "Используется только в админке для удобной навигации.",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "50",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": ""
+                            },
+                            {
+                                "key": "field_portfolio_hero_section_id",
+                                "label": "ID секции",
+                                "name": "section_id",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "Без #. Например: portfolio-grid.",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "25",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": ""
+                            },
+                            {
+                                "key": "field_portfolio_hero_section_class",
+                                "label": "CSS-класс секции",
+                                "name": "section_class",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "Дополнительный CSS-класс без точки.",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "25",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": ""
+                            },
+                            {
+                                "key": "field_portfolio_hero_hide",
+                                "label": "Скрыть секцию",
+                                "name": "hide_section",
+                                "aria-label": "",
+                                "type": "true_false",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "25",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "message": "",
+                                "default_value": 0,
+                                "allow_in_bindings": 0,
+                                "ui": 1,
+                                "ui_on_text": "",
+                                "ui_off_text": ""
+                            },
+                            {
+                                "key": "field_portfolio_hero_section_background",
+                                "label": "Фон секции",
+                                "name": "section_background",
+                                "aria-label": "",
+                                "type": "select",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "20",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "choices": {
+                                    "none": "Не задавать",
+                                    "white": "Белый фон",
+                                    "black": "Чёрный фон"
+                                },
+                                "default_value": "none",
+                                "return_format": "value",
+                                "multiple": 0,
+                                "allow_null": 0,
+                                "ui": 1,
+                                "ajax": 0,
+                                "placeholder": ""
+                            },
+                            {
+                                "key": "field_portfolio_hero_padding_top",
+                                "label": "Паддинг сверху",
+                                "name": "padding_top",
+                                "aria-label": "",
+                                "type": "number",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "25",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "min": 0,
+                                "max": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "step": 1,
+                                "prepend": "",
+                                "append": "px"
+                            },
+                            {
+                                "key": "field_portfolio_hero_padding_bottom",
+                                "label": "Паддинг снизу",
+                                "name": "padding_bottom",
+                                "aria-label": "",
+                                "type": "number",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "25",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "min": 0,
+                                "max": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "step": 1,
+                                "prepend": "",
+                                "append": "px"
+                            },
+                            {
+                                "key": "field_portfolio_hero_margin_top",
+                                "label": "Маржин сверху",
+                                "name": "margin_top",
+                                "aria-label": "",
+                                "type": "number",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "25",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "min": 0,
+                                "max": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "step": 1,
+                                "prepend": "",
+                                "append": "px"
+                            },
+                            {
+                                "key": "field_portfolio_hero_margin_bottom",
+                                "label": "Маржин снизу",
+                                "name": "margin_bottom",
+                                "aria-label": "",
+                                "type": "number",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "25",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "min": 0,
+                                "max": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "step": 1,
+                                "prepend": "",
+                                "append": "px"
+                            },
+                            {
+                                "key": "field_portfolio_hero_external",
+                                "label": "Использовать контент с другой страницы",
+                                "name": "use_external_content",
+                                "aria-label": "",
+                                "type": "true_false",
+                                "instructions": "Позволяет переиспользовать такую же секцию с другой страницы.",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "50",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "message": "",
+                                "default_value": 0,
+                                "allow_in_bindings": 0,
+                                "ui": 1,
+                                "ui_on_text": "",
+                                "ui_off_text": ""
+                            },
+                            {
+                                "key": "field_portfolio_hero_source_page",
+                                "label": "Страница-источник",
+                                "name": "source_page",
+                                "aria-label": "",
+                                "type": "post_object",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": [
+                                    [
+                                        {
+                                            "field": "field_portfolio_hero_external",
+                                            "operator": "==",
+                                            "value": "1"
+                                        }
+                                    ]
+                                ],
+                                "wrapper": {
+                                    "width": "50",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "post_type": [
+                                    "page"
+                                ],
+                                "post_status": [
+                                    "publish"
+                                ],
+                                "taxonomy": "",
+                                "return_format": "id",
+                                "multiple": 0,
+                                "allow_null": 1,
+                                "allow_in_bindings": 0,
+                                "bidirectional": 0,
+                                "ui": 1,
+                                "bidirectional_target": []
+                            },
+                            {
+                                "key": "field_portfolio_hero_source_section",
+                                "label": "ID секции-источника",
+                                "name": "source_section_id",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "Укажите section_id блока на выбранной странице.",
+                                "required": 0,
+                                "conditional_logic": [
+                                    [
+                                        {
+                                            "field": "field_portfolio_hero_external",
+                                            "operator": "==",
+                                            "value": "1"
+                                        }
+                                    ]
+                                ],
+                                "wrapper": {
+                                    "width": "50",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": ""
+                            },
+                            {
+                                "key": "field_portfolio_hero_breadcrumbs",
+                                "label": "Показывать хлебные крошки",
+                                "name": "show_breadcrumbs",
+                                "aria-label": "",
+                                "type": "true_false",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "25",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "message": "",
+                                "default_value": 1,
+                                "allow_in_bindings": 0,
+                                "ui": 1,
+                                "ui_on_text": "",
+                                "ui_off_text": ""
+                            },
+                            {
+                                "key": "field_portfolio_hero_title",
+                                "label": "Заголовок H1",
+                                "name": "title",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "75",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": ""
+                            },
+                            {
+                                "key": "field_portfolio_hero_description",
+                                "label": "Описание под заголовком",
+                                "name": "description",
+                                "aria-label": "",
+                                "type": "textarea",
+                                "instructions": "Короткий SEO-текст под H1.",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "allow_in_bindings": 0,
+                                "rows": 3,
+                                "placeholder": "",
+                                "new_lines": "br"
+                            }
+                        ],
+                        "min": "",
+                        "max": ""
+                    },
+                    "layout_portfolio_grid": {
+                        "key": "layout_portfolio_grid",
+                        "name": "portfolio_grid",
+                        "label": "Каталог объектов",
+                        "display": "block",
+                        "sub_fields": [
+                            {
+                                "key": "field_portfolio_grid_admin_title",
+                                "label": "Название блока для админки",
+                                "name": "admin_title",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "Используется только в админке для удобной навигации.",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "50",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": ""
+                            },
+                            {
+                                "key": "field_portfolio_grid_section_id",
+                                "label": "ID секции",
+                                "name": "section_id",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "Без #. Например: portfolio-grid.",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "25",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": ""
+                            },
+                            {
+                                "key": "field_portfolio_grid_section_class",
+                                "label": "CSS-класс секции",
+                                "name": "section_class",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "Дополнительный CSS-класс без точки.",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "25",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": ""
+                            },
+                            {
+                                "key": "field_portfolio_grid_hide",
+                                "label": "Скрыть секцию",
+                                "name": "hide_section",
+                                "aria-label": "",
+                                "type": "true_false",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "25",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "message": "",
+                                "default_value": 0,
+                                "allow_in_bindings": 0,
+                                "ui": 1,
+                                "ui_on_text": "",
+                                "ui_off_text": ""
+                            },
+                            {
+                                "key": "field_portfolio_grid_section_background",
+                                "label": "Фон секции",
+                                "name": "section_background",
+                                "aria-label": "",
+                                "type": "select",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "20",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "choices": {
+                                    "none": "Не задавать",
+                                    "white": "Белый фон",
+                                    "black": "Чёрный фон"
+                                },
+                                "default_value": "none",
+                                "return_format": "value",
+                                "multiple": 0,
+                                "allow_null": 0,
+                                "ui": 1,
+                                "ajax": 0,
+                                "placeholder": ""
+                            },
+                            {
+                                "key": "field_portfolio_grid_padding_top",
+                                "label": "Паддинг сверху",
+                                "name": "padding_top",
+                                "aria-label": "",
+                                "type": "number",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "25",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "min": 0,
+                                "max": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "step": 1,
+                                "prepend": "",
+                                "append": "px"
+                            },
+                            {
+                                "key": "field_portfolio_grid_padding_bottom",
+                                "label": "Паддинг снизу",
+                                "name": "padding_bottom",
+                                "aria-label": "",
+                                "type": "number",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "25",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "min": 0,
+                                "max": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "step": 1,
+                                "prepend": "",
+                                "append": "px"
+                            },
+                            {
+                                "key": "field_portfolio_grid_margin_top",
+                                "label": "Маржин сверху",
+                                "name": "margin_top",
+                                "aria-label": "",
+                                "type": "number",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "25",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "min": 0,
+                                "max": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "step": 1,
+                                "prepend": "",
+                                "append": "px"
+                            },
+                            {
+                                "key": "field_portfolio_grid_margin_bottom",
+                                "label": "Маржин снизу",
+                                "name": "margin_bottom",
+                                "aria-label": "",
+                                "type": "number",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "25",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "min": 0,
+                                "max": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "step": 1,
+                                "prepend": "",
+                                "append": "px"
+                            },
+                            {
+                                "key": "field_portfolio_grid_external",
+                                "label": "Использовать контент с другой страницы",
+                                "name": "use_external_content",
+                                "aria-label": "",
+                                "type": "true_false",
+                                "instructions": "Позволяет переиспользовать такую же секцию с другой страницы.",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "50",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "message": "",
+                                "default_value": 0,
+                                "allow_in_bindings": 0,
+                                "ui": 1,
+                                "ui_on_text": "",
+                                "ui_off_text": ""
+                            },
+                            {
+                                "key": "field_portfolio_grid_source_page",
+                                "label": "Страница-источник",
+                                "name": "source_page",
+                                "aria-label": "",
+                                "type": "post_object",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": [
+                                    [
+                                        {
+                                            "field": "field_portfolio_grid_external",
+                                            "operator": "==",
+                                            "value": "1"
+                                        }
+                                    ]
+                                ],
+                                "wrapper": {
+                                    "width": "50",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "post_type": [
+                                    "page"
+                                ],
+                                "post_status": [
+                                    "publish"
+                                ],
+                                "taxonomy": "",
+                                "return_format": "id",
+                                "multiple": 0,
+                                "allow_null": 1,
+                                "allow_in_bindings": 0,
+                                "bidirectional": 0,
+                                "ui": 1,
+                                "bidirectional_target": []
+                            },
+                            {
+                                "key": "field_portfolio_grid_source_section",
+                                "label": "ID секции-источника",
+                                "name": "source_section_id",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "Укажите section_id блока на выбранной странице.",
+                                "required": 0,
+                                "conditional_logic": [
+                                    [
+                                        {
+                                            "field": "field_portfolio_grid_external",
+                                            "operator": "==",
+                                            "value": "1"
+                                        }
+                                    ]
+                                ],
+                                "wrapper": {
+                                    "width": "50",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": ""
+                            },
+                            {
+                                "key": "field_portfolio_grid_title",
+                                "label": "Заголовок секции",
+                                "name": "title",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": ""
+                            },
+                            {
+                                "key": "field_portfolio_grid_source",
+                                "label": "Источник объектов",
+                                "name": "portfolio_source",
+                                "aria-label": "",
+                                "type": "select",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "50",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "choices": {
+                                    "latest": "Последние опубликованные объекты",
+                                    "manual": "Выбрать объекты вручную"
+                                },
+                                "default_value": "latest",
+                                "return_format": "value",
+                                "multiple": 0,
+                                "allow_null": 0,
+                                "allow_in_bindings": 0,
+                                "ui": 1,
+                                "ajax": 0,
+                                "placeholder": "",
+                                "create_options": 0,
+                                "save_options": 0
+                            },
+                            {
+                                "key": "field_portfolio_grid_count",
+                                "label": "Количество объектов при первой загрузке",
+                                "name": "portfolio_count",
+                                "aria-label": "",
+                                "type": "number",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": [
+                                    [
+                                        {
+                                            "field": "field_portfolio_grid_source",
+                                            "operator": "==",
+                                            "value": "latest"
+                                        }
+                                    ]
+                                ],
+                                "wrapper": {
+                                    "width": "25",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": 28,
+                                "min": 1,
+                                "max": 100,
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "step": 1,
+                                "prepend": "",
+                                "append": ""
+                            },
+                            {
+                                "key": "field_portfolio_grid_items",
+                                "label": "Объекты портфолио",
+                                "name": "portfolio_items",
+                                "aria-label": "",
+                                "type": "relationship",
+                                "instructions": "Выберите объекты и расположите их в нужном порядке.",
+                                "required": 0,
+                                "conditional_logic": [
+                                    [
+                                        {
+                                            "field": "field_portfolio_grid_source",
+                                            "operator": "==",
+                                            "value": "manual"
+                                        }
+                                    ]
+                                ],
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "post_type": [
+                                    "portfolio"
+                                ],
+                                "post_status": [
+                                    "publish"
+                                ],
+                                "taxonomy": "",
+                                "filters": [
+                                    "search"
+                                ],
+                                "return_format": "id",
+                                "min": 0,
+                                "max": 0,
+                                "allow_in_bindings": 0,
+                                "elements": [
+                                    "featured_image"
+                                ],
+                                "bidirectional": 0,
+                                "bidirectional_target": []
+                            },
+                            {
+                                "key": "field_portfolio_grid_load_more",
+                                "label": "Показывать кнопку «Загрузить ещё»",
+                                "name": "show_load_more",
+                                "aria-label": "",
+                                "type": "true_false",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "25",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "message": "",
+                                "default_value": 1,
+                                "allow_in_bindings": 0,
+                                "ui": 1,
+                                "ui_on_text": "",
+                                "ui_off_text": ""
+                            },
+                            {
+                                "key": "field_portfolio_grid_load_more_text",
+                                "label": "Текст кнопки",
+                                "name": "load_more_text",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": [
+                                    [
+                                        {
+                                            "field": "field_portfolio_grid_load_more",
+                                            "operator": "==",
+                                            "value": "1"
+                                        }
+                                    ]
+                                ],
+                                "wrapper": {
+                                    "width": "25",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "Загрузить ещё",
+                                "maxlength": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": ""
+                            },
+                            {
+                                "key": "field_portfolio_grid_load_more_count",
+                                "label": "Сколько подгружать",
+                                "name": "load_more_count",
+                                "aria-label": "",
+                                "type": "number",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": [
+                                    [
+                                        {
+                                            "field": "field_portfolio_grid_load_more",
+                                            "operator": "==",
+                                            "value": "1"
+                                        }
+                                    ]
+                                ],
+                                "wrapper": {
+                                    "width": "25",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": 8,
+                                "min": 1,
+                                "max": 40,
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "step": 1,
+                                "prepend": "",
+                                "append": ""
+                            }
+                        ],
+                        "min": "",
+                        "max": ""
+                    },
+                    "layout_portfolio_price_table": {
+                        "key": "layout_portfolio_price_table",
+                        "name": "price_table",
+                        "label": "Таблица цен",
+                        "display": "block",
+                        "sub_fields": [
+                            {
+                                "key": "field_portfolio_price_admin_title",
+                                "label": "Название блока для админки",
+                                "name": "admin_title",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "Используется только в админке для удобной навигации.",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "50",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": ""
+                            },
+                            {
+                                "key": "field_portfolio_price_section_id",
+                                "label": "ID секции",
+                                "name": "section_id",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "Без #. Например: portfolio-grid.",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "25",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": ""
+                            },
+                            {
+                                "key": "field_portfolio_price_section_class",
+                                "label": "CSS-класс секции",
+                                "name": "section_class",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "Дополнительный CSS-класс без точки.",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "25",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": ""
+                            },
+                            {
+                                "key": "field_portfolio_price_hide",
+                                "label": "Скрыть секцию",
+                                "name": "hide_section",
+                                "aria-label": "",
+                                "type": "true_false",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "25",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "message": "",
+                                "default_value": 0,
+                                "allow_in_bindings": 0,
+                                "ui": 1,
+                                "ui_on_text": "",
+                                "ui_off_text": ""
+                            },
+                            {
+                                "key": "field_portfolio_price_table_section_background",
+                                "label": "Фон секции",
+                                "name": "section_background",
+                                "aria-label": "",
+                                "type": "select",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "20",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "choices": {
+                                    "none": "Не задавать",
+                                    "white": "Белый фон",
+                                    "black": "Чёрный фон"
+                                },
+                                "default_value": "none",
+                                "return_format": "value",
+                                "multiple": 0,
+                                "allow_null": 0,
+                                "ui": 1,
+                                "ajax": 0,
+                                "placeholder": ""
+                            },
+                            {
+                                "key": "field_portfolio_price_table_padding_top",
+                                "label": "Паддинг сверху",
+                                "name": "padding_top",
+                                "aria-label": "",
+                                "type": "number",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "25",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "min": 0,
+                                "max": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "step": 1,
+                                "prepend": "",
+                                "append": "px"
+                            },
+                            {
+                                "key": "field_portfolio_price_table_padding_bottom",
+                                "label": "Паддинг снизу",
+                                "name": "padding_bottom",
+                                "aria-label": "",
+                                "type": "number",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "25",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "min": 0,
+                                "max": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "step": 1,
+                                "prepend": "",
+                                "append": "px"
+                            },
+                            {
+                                "key": "field_portfolio_price_table_margin_top",
+                                "label": "Маржин сверху",
+                                "name": "margin_top",
+                                "aria-label": "",
+                                "type": "number",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "25",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "min": 0,
+                                "max": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "step": 1,
+                                "prepend": "",
+                                "append": "px"
+                            },
+                            {
+                                "key": "field_portfolio_price_table_margin_bottom",
+                                "label": "Маржин снизу",
+                                "name": "margin_bottom",
+                                "aria-label": "",
+                                "type": "number",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "25",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "min": 0,
+                                "max": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "step": 1,
+                                "prepend": "",
+                                "append": "px"
+                            },
+                            {
+                                "key": "field_portfolio_price_external",
+                                "label": "Использовать контент с другой страницы",
+                                "name": "use_external_content",
+                                "aria-label": "",
+                                "type": "true_false",
+                                "instructions": "Позволяет переиспользовать такую же секцию с другой страницы.",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "50",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "message": "",
+                                "default_value": 0,
+                                "allow_in_bindings": 0,
+                                "ui": 1,
+                                "ui_on_text": "",
+                                "ui_off_text": ""
+                            },
+                            {
+                                "key": "field_portfolio_price_source_page",
+                                "label": "Страница-источник",
+                                "name": "source_page",
+                                "aria-label": "",
+                                "type": "post_object",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": [
+                                    [
+                                        {
+                                            "field": "field_portfolio_price_external",
+                                            "operator": "==",
+                                            "value": "1"
+                                        }
+                                    ]
+                                ],
+                                "wrapper": {
+                                    "width": "50",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "post_type": [
+                                    "page"
+                                ],
+                                "post_status": [
+                                    "publish"
+                                ],
+                                "taxonomy": "",
+                                "return_format": "id",
+                                "multiple": 0,
+                                "allow_null": 1,
+                                "allow_in_bindings": 0,
+                                "bidirectional": 0,
+                                "ui": 1,
+                                "bidirectional_target": []
+                            },
+                            {
+                                "key": "field_portfolio_price_source_section",
+                                "label": "ID секции-источника",
+                                "name": "source_section_id",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "Укажите section_id блока на выбранной странице.",
+                                "required": 0,
+                                "conditional_logic": [
+                                    [
+                                        {
+                                            "field": "field_portfolio_price_external",
+                                            "operator": "==",
+                                            "value": "1"
+                                        }
+                                    ]
+                                ],
+                                "wrapper": {
+                                    "width": "50",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": ""
+                            },
+                            {
+                                "key": "field_portfolio_price_title",
+                                "label": "Заголовок",
+                                "name": "title",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": ""
+                            },
+                            {
+                                "key": "field_portfolio_price_description",
+                                "label": "Описание",
+                                "name": "description",
+                                "aria-label": "",
+                                "type": "textarea",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "allow_in_bindings": 0,
+                                "rows": 4,
+                                "placeholder": "",
+                                "new_lines": "br"
+                            },
+                            {
+                                "key": "field_portfolio_price_header_work_icon",
+                                "label": "Иконка — Вид работ",
+                                "name": "table_header_work_icon",
+                                "aria-label": "",
+                                "type": "image",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "12",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "return_format": "id",
+                                "library": "all",
+                                "preview_size": "thumbnail",
+                                "min_width": "",
+                                "min_height": "",
+                                "min_size": "",
+                                "max_width": "",
+                                "max_height": "",
+                                "max_size": "",
+                                "mime_types": ""
+                            },
+                            {
+                                "key": "field_portfolio_price_header_work_title",
+                                "label": "Заголовок — Вид работ",
+                                "name": "table_header_work_title",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "13",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "Вид работ",
+                                "maxlength": "",
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": ""
+                            },
+                            {
+                                "key": "field_portfolio_price_header_includes_icon",
+                                "label": "Иконка — Что входит",
+                                "name": "table_header_includes_icon",
+                                "aria-label": "",
+                                "type": "image",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "12",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "return_format": "id",
+                                "library": "all",
+                                "preview_size": "thumbnail",
+                                "min_width": "",
+                                "min_height": "",
+                                "min_size": "",
+                                "max_width": "",
+                                "max_height": "",
+                                "max_size": "",
+                                "mime_types": ""
+                            },
+                            {
+                                "key": "field_portfolio_price_header_includes_title",
+                                "label": "Заголовок — Что входит",
+                                "name": "table_header_includes_title",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "13",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "Что входит",
+                                "maxlength": "",
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": ""
+                            },
+                            {
+                                "key": "field_portfolio_price_header_suitable_icon",
+                                "label": "Иконка — Когда подходит",
+                                "name": "table_header_suitable_icon",
+                                "aria-label": "",
+                                "type": "image",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "12",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "return_format": "id",
+                                "library": "all",
+                                "preview_size": "thumbnail",
+                                "min_width": "",
+                                "min_height": "",
+                                "min_size": "",
+                                "max_width": "",
+                                "max_height": "",
+                                "max_size": "",
+                                "mime_types": ""
+                            },
+                            {
+                                "key": "field_portfolio_price_header_suitable_title",
+                                "label": "Заголовок — Когда подходит",
+                                "name": "table_header_suitable_title",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "13",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "Когда подходит",
+                                "maxlength": "",
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": ""
+                            },
+                            {
+                                "key": "field_portfolio_price_header_price_icon",
+                                "label": "Иконка — Цена",
+                                "name": "table_header_price_icon",
+                                "aria-label": "",
+                                "type": "image",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "12",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "return_format": "id",
+                                "library": "all",
+                                "preview_size": "thumbnail",
+                                "min_width": "",
+                                "min_height": "",
+                                "min_size": "",
+                                "max_width": "",
+                                "max_height": "",
+                                "max_size": "",
+                                "mime_types": ""
+                            },
+                            {
+                                "key": "field_portfolio_price_header_price_title",
+                                "label": "Заголовок — Цена",
+                                "name": "table_header_price_title",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "13",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "Цена",
+                                "maxlength": "",
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": ""
+                            },
+                            {
+                                "key": "field_portfolio_price_rows",
+                                "label": "Строки таблицы",
+                                "name": "price_rows",
+                                "aria-label": "",
+                                "type": "repeater",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "min": 0,
+                                "max": 0,
+                                "layout": "table",
+                                "button_label": "Добавить строку",
+                                "collapsed": "",
+                                "rows_per_page": 20,
+                                "sub_fields": [
+                                    {
+                                        "key": "field_portfolio_price_row_work",
+                                        "label": "Вид работ",
+                                        "name": "work_type",
+                                        "aria-label": "",
+                                        "type": "text",
+                                        "instructions": "",
+                                        "required": 0,
+                                        "conditional_logic": 0,
+                                        "wrapper": {
+                                            "width": "25",
+                                            "class": "",
+                                            "id": ""
+                                        },
+                                        "default_value": "",
+                                        "maxlength": "",
+                                        "allow_in_bindings": 0,
+                                        "placeholder": "",
+                                        "prepend": "",
+                                        "append": ""
+                                    },
+                                    {
+                                        "key": "field_portfolio_price_row_includes",
+                                        "label": "Что входит",
+                                        "name": "includes",
+                                        "aria-label": "",
+                                        "type": "textarea",
+                                        "instructions": "",
+                                        "required": 0,
+                                        "conditional_logic": 0,
+                                        "wrapper": {
+                                            "width": "25",
+                                            "class": "",
+                                            "id": ""
+                                        },
+                                        "default_value": "",
+                                        "maxlength": "",
+                                        "allow_in_bindings": 0,
+                                        "rows": 3,
+                                        "placeholder": "",
+                                        "new_lines": "br"
+                                    },
+                                    {
+                                        "key": "field_portfolio_price_row_suitable",
+                                        "label": "Когда подходит",
+                                        "name": "suitable_for",
+                                        "aria-label": "",
+                                        "type": "textarea",
+                                        "instructions": "",
+                                        "required": 0,
+                                        "conditional_logic": 0,
+                                        "wrapper": {
+                                            "width": "25",
+                                            "class": "",
+                                            "id": ""
+                                        },
+                                        "default_value": "",
+                                        "maxlength": "",
+                                        "allow_in_bindings": 0,
+                                        "rows": 3,
+                                        "placeholder": "",
+                                        "new_lines": "br"
+                                    },
+                                    {
+                                        "key": "field_portfolio_price_row_price",
+                                        "label": "Цена",
+                                        "name": "price",
+                                        "aria-label": "",
+                                        "type": "text",
+                                        "instructions": "",
+                                        "required": 0,
+                                        "conditional_logic": 0,
+                                        "wrapper": {
+                                            "width": "25",
+                                            "class": "",
+                                            "id": ""
+                                        },
+                                        "default_value": "",
+                                        "maxlength": "",
+                                        "allow_in_bindings": 0,
+                                        "placeholder": "",
+                                        "prepend": "",
+                                        "append": ""
+                                    }
+                                ]
+                            },
+                            {
+                                "key": "field_portfolio_price_info_icon",
+                                "label": "Иконка примечания",
+                                "name": "info_icon",
+                                "aria-label": "",
+                                "type": "image",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "25",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "return_format": "id",
+                                "library": "all",
+                                "allow_in_bindings": 0,
+                                "preview_size": "medium",
+                                "min_width": "",
+                                "min_height": "",
+                                "min_size": "",
+                                "max_width": "",
+                                "max_height": "",
+                                "max_size": "",
+                                "mime_types": ""
+                            },
+                            {
+                                "key": "field_portfolio_price_info_text",
+                                "label": "Текст примечания",
+                                "name": "info_text",
+                                "aria-label": "",
+                                "type": "textarea",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "75",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "allow_in_bindings": 0,
+                                "rows": 4,
+                                "placeholder": "",
+                                "new_lines": "br"
+                            },
+                            {
+                                "key": "field_portfolio_price_cta_icon",
+                                "label": "Иконка CTA",
+                                "name": "cta_icon",
+                                "aria-label": "",
+                                "type": "image",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "20",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "return_format": "id",
+                                "library": "all",
+                                "allow_in_bindings": 0,
+                                "preview_size": "medium",
+                                "min_width": "",
+                                "min_height": "",
+                                "min_size": "",
+                                "max_width": "",
+                                "max_height": "",
+                                "max_size": "",
+                                "mime_types": ""
+                            },
+                            {
+                                "key": "field_portfolio_price_cta_title",
+                                "label": "Заголовок CTA",
+                                "name": "cta_title",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "40",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": ""
+                            },
+                            {
+                                "key": "field_portfolio_price_cta_text",
+                                "label": "Текст CTA",
+                                "name": "cta_text",
+                                "aria-label": "",
+                                "type": "textarea",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "40",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "allow_in_bindings": 0,
+                                "rows": 3,
+                                "placeholder": "",
+                                "new_lines": "br"
+                            },
+                            {
+                                "key": "field_portfolio_price_cta_button",
+                                "label": "Глобальная кнопка",
+                                "name": "global_button_id",
+                                "aria-label": "",
+                                "type": "select",
+                                "instructions": "Выбирается из глобальных настроек сайта.",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "50",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "choices": {},
+                                "default_value": "",
+                                "return_format": "value",
+                                "multiple": 0,
+                                "allow_null": 1,
+                                "allow_in_bindings": 0,
+                                "ui": 1,
+                                "ajax": 0,
+                                "placeholder": "",
+                                "create_options": 0,
+                                "save_options": 0
+                            },
+                            {
+                                "key": "field_portfolio_price_table_global_button_id_button_text",
+                                "label": "Текст кнопки",
+                                "name": "button_text",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "Переопределяет текст выбранной глобальной кнопки.",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "100",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": ""
+                            },
+                            {
+                                "key": "field_portfolio_price_table_global_button_id_button_link",
+                                "label": "Ручная ссылка",
+                                "name": "button_link",
+                                "aria-label": "",
+                                "type": "link",
+                                "instructions": "Переопределяет ссылку выбранной глобальной кнопки.",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "100",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "return_format": "array",
+                                "allow_in_bindings": 0
+                            },
+                            {
+                                "key": "field_portfolio_price_table_global_button_id_modal_title",
+                                "label": "Заголовок модального окна",
+                                "name": "modal_title",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "Переопределяет заголовок модального окна выбранной глобальной кнопки.",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "100",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": ""
+                            }
+                        ],
+                        "min": "",
+                        "max": ""
+                    },
+                    "layout_portfolio_calculator": {
+                        "key": "layout_portfolio_calculator",
+                        "name": "calculator",
+                        "label": "Калькулятор",
+                        "display": "block",
+                        "sub_fields": [
+                            {
+                                "key": "field_portfolio_calculator_admin_title",
+                                "label": "Название блока для админки",
+                                "name": "admin_title",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "Используется только в админке для удобной навигации.",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "50",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": ""
+                            },
+                            {
+                                "key": "field_portfolio_calculator_section_id",
+                                "label": "ID секции",
+                                "name": "section_id",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "Без #. Например: portfolio-grid.",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "25",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": ""
+                            },
+                            {
+                                "key": "field_portfolio_calculator_section_class",
+                                "label": "CSS-класс секции",
+                                "name": "section_class",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "Дополнительный CSS-класс без точки.",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "25",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": ""
+                            },
+                            {
+                                "key": "field_portfolio_calculator_hide",
+                                "label": "Скрыть секцию",
+                                "name": "hide_section",
+                                "aria-label": "",
+                                "type": "true_false",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "25",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "message": "",
+                                "default_value": 0,
+                                "allow_in_bindings": 0,
+                                "ui": 1,
+                                "ui_on_text": "",
+                                "ui_off_text": ""
+                            },
+                            {
+                                "key": "field_portfolio_calculator_section_background",
+                                "label": "Фон секции",
+                                "name": "section_background",
+                                "aria-label": "",
+                                "type": "select",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "20",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "choices": {
+                                    "none": "Не задавать",
+                                    "white": "Белый фон",
+                                    "black": "Чёрный фон"
+                                },
+                                "default_value": "none",
+                                "return_format": "value",
+                                "multiple": 0,
+                                "allow_null": 0,
+                                "ui": 1,
+                                "ajax": 0,
+                                "placeholder": ""
+                            },
+                            {
+                                "key": "field_calculator_padding_top",
+                                "label": "Паддинг сверху",
+                                "name": "padding_top",
+                                "aria-label": "",
+                                "type": "number",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "25",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "min": 0,
+                                "max": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "step": 1,
+                                "prepend": "",
+                                "append": "px"
+                            },
+                            {
+                                "key": "field_calculator_padding_bottom",
+                                "label": "Паддинг снизу",
+                                "name": "padding_bottom",
+                                "aria-label": "",
+                                "type": "number",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "25",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "min": 0,
+                                "max": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "step": 1,
+                                "prepend": "",
+                                "append": "px"
+                            },
+                            {
+                                "key": "field_calculator_margin_top",
+                                "label": "Маржин сверху",
+                                "name": "margin_top",
+                                "aria-label": "",
+                                "type": "number",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "25",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "min": 0,
+                                "max": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "step": 1,
+                                "prepend": "",
+                                "append": "px"
+                            },
+                            {
+                                "key": "field_calculator_margin_bottom",
+                                "label": "Маржин снизу",
+                                "name": "margin_bottom",
+                                "aria-label": "",
+                                "type": "number",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "25",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "min": 0,
+                                "max": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "step": 1,
+                                "prepend": "",
+                                "append": "px"
+                            },
+                            {
+                                "key": "field_portfolio_calculator_external",
+                                "label": "Использовать контент с другой страницы",
+                                "name": "use_external_content",
+                                "aria-label": "",
+                                "type": "true_false",
+                                "instructions": "Позволяет переиспользовать такую же секцию с другой страницы.",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "50",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "message": "",
+                                "default_value": 0,
+                                "allow_in_bindings": 0,
+                                "ui": 1,
+                                "ui_on_text": "",
+                                "ui_off_text": ""
+                            },
+                            {
+                                "key": "field_portfolio_calculator_source_page",
+                                "label": "Страница-источник",
+                                "name": "source_page",
+                                "aria-label": "",
+                                "type": "post_object",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": [
+                                    [
+                                        {
+                                            "field": "field_portfolio_calculator_external",
+                                            "operator": "==",
+                                            "value": "1"
+                                        }
+                                    ]
+                                ],
+                                "wrapper": {
+                                    "width": "50",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "post_type": [
+                                    "page"
+                                ],
+                                "post_status": [
+                                    "publish"
+                                ],
+                                "taxonomy": "",
+                                "return_format": "id",
+                                "multiple": 0,
+                                "allow_null": 1,
+                                "allow_in_bindings": 0,
+                                "bidirectional": 0,
+                                "ui": 1,
+                                "bidirectional_target": []
+                            },
+                            {
+                                "key": "field_portfolio_calculator_source_section",
+                                "label": "ID секции-источника",
+                                "name": "source_section_id",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "Укажите section_id блока на выбранной странице.",
+                                "required": 0,
+                                "conditional_logic": [
+                                    [
+                                        {
+                                            "field": "field_portfolio_calculator_external",
+                                            "operator": "==",
+                                            "value": "1"
+                                        }
+                                    ]
+                                ],
+                                "wrapper": {
+                                    "width": "50",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": ""
+                            },
+                            {
+                                "key": "field_portfolio_calculator_title",
+                                "label": "Заголовок секции",
+                                "name": "title",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": ""
+                            },
+                            {
+                                "key": "field_portfolio_calculator_description",
+                                "label": "Описание секции",
+                                "name": "description",
+                                "aria-label": "",
+                                "type": "textarea",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "allow_in_bindings": 0,
+                                "rows": 4,
+                                "placeholder": "",
+                                "new_lines": "br"
+                            },
+                            {
+                                "key": "field_portfolio_calculator_item",
+                                "label": "Выбрать калькулятор",
+                                "name": "calculator_id",
+                                "aria-label": "",
+                                "type": "post_object",
+                                "instructions": "Калькулятор создаётся отдельно в разделе «Калькуляторы».",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "post_type": [
+                                    "calculator"
+                                ],
+                                "post_status": [
+                                    "publish"
+                                ],
+                                "taxonomy": "",
+                                "return_format": "id",
+                                "multiple": 0,
+                                "allow_null": 1,
+                                "allow_in_bindings": 0,
+                                "bidirectional": 0,
+                                "ui": 1,
+                                "bidirectional_target": []
+                            }
+                        ],
+                        "min": "",
+                        "max": ""
+                    },
+                    "layout_portfolio_faq": {
+                        "key": "layout_portfolio_faq",
+                        "name": "faq",
+                        "label": "Вопросы и ответы",
+                        "display": "block",
+                        "sub_fields": [
+                            {
+                                "key": "field_portfolio_faq_admin_title",
+                                "label": "Название блока для админки",
+                                "name": "admin_title",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "Используется только в админке для удобной навигации.",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "50",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": ""
+                            },
+                            {
+                                "key": "field_portfolio_faq_section_id",
+                                "label": "ID секции",
+                                "name": "section_id",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "Без #. Например: portfolio-grid.",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "25",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": ""
+                            },
+                            {
+                                "key": "field_portfolio_faq_section_class",
+                                "label": "CSS-класс секции",
+                                "name": "section_class",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "Дополнительный CSS-класс без точки.",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "25",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": ""
+                            },
+                            {
+                                "key": "field_portfolio_faq_hide",
+                                "label": "Скрыть секцию",
+                                "name": "hide_section",
+                                "aria-label": "",
+                                "type": "true_false",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "25",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "message": "",
+                                "default_value": 0,
+                                "allow_in_bindings": 0,
+                                "ui": 1,
+                                "ui_on_text": "",
+                                "ui_off_text": ""
+                            },
+                            {
+                                "key": "field_portfolio_faq_section_background",
+                                "label": "Фон секции",
+                                "name": "section_background",
+                                "aria-label": "",
+                                "type": "select",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "20",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "choices": {
+                                    "none": "Не задавать",
+                                    "white": "Белый фон",
+                                    "black": "Чёрный фон"
+                                },
+                                "default_value": "none",
+                                "return_format": "value",
+                                "multiple": 0,
+                                "allow_null": 0,
+                                "ui": 1,
+                                "ajax": 0,
+                                "placeholder": ""
+                            },
+                            {
+                                "key": "field_faq_padding_top",
+                                "label": "Паддинг сверху",
+                                "name": "padding_top",
+                                "aria-label": "",
+                                "type": "number",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "25",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "min": 0,
+                                "max": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "step": 1,
+                                "prepend": "",
+                                "append": "px"
+                            },
+                            {
+                                "key": "field_faq_padding_bottom",
+                                "label": "Паддинг снизу",
+                                "name": "padding_bottom",
+                                "aria-label": "",
+                                "type": "number",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "25",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "min": 0,
+                                "max": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "step": 1,
+                                "prepend": "",
+                                "append": "px"
+                            },
+                            {
+                                "key": "field_faq_margin_top",
+                                "label": "Маржин сверху",
+                                "name": "margin_top",
+                                "aria-label": "",
+                                "type": "number",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "25",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "min": 0,
+                                "max": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "step": 1,
+                                "prepend": "",
+                                "append": "px"
+                            },
+                            {
+                                "key": "field_faq_margin_bottom",
+                                "label": "Маржин снизу",
+                                "name": "margin_bottom",
+                                "aria-label": "",
+                                "type": "number",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "25",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "min": 0,
+                                "max": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "step": 1,
+                                "prepend": "",
+                                "append": "px"
+                            },
+                            {
+                                "key": "field_portfolio_faq_external",
+                                "label": "Использовать контент с другой страницы",
+                                "name": "use_external_content",
+                                "aria-label": "",
+                                "type": "true_false",
+                                "instructions": "Позволяет переиспользовать такую же секцию с другой страницы.",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "50",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "message": "",
+                                "default_value": 0,
+                                "allow_in_bindings": 0,
+                                "ui": 1,
+                                "ui_on_text": "",
+                                "ui_off_text": ""
+                            },
+                            {
+                                "key": "field_portfolio_faq_source_page",
+                                "label": "Страница-источник",
+                                "name": "source_page",
+                                "aria-label": "",
+                                "type": "post_object",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": [
+                                    [
+                                        {
+                                            "field": "field_portfolio_faq_external",
+                                            "operator": "==",
+                                            "value": "1"
+                                        }
+                                    ]
+                                ],
+                                "wrapper": {
+                                    "width": "50",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "post_type": [
+                                    "page"
+                                ],
+                                "post_status": [
+                                    "publish"
+                                ],
+                                "taxonomy": "",
+                                "return_format": "id",
+                                "multiple": 0,
+                                "allow_null": 1,
+                                "allow_in_bindings": 0,
+                                "bidirectional": 0,
+                                "ui": 1,
+                                "bidirectional_target": []
+                            },
+                            {
+                                "key": "field_portfolio_faq_source_section",
+                                "label": "ID секции-источника",
+                                "name": "source_section_id",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "Укажите section_id блока на выбранной странице.",
+                                "required": 0,
+                                "conditional_logic": [
+                                    [
+                                        {
+                                            "field": "field_portfolio_faq_external",
+                                            "operator": "==",
+                                            "value": "1"
+                                        }
+                                    ]
+                                ],
+                                "wrapper": {
+                                    "width": "50",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": ""
+                            },
+                            {
+                                "key": "field_portfolio_faq_title",
+                                "label": "Заголовок",
+                                "name": "title",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": ""
+                            },
+                            {
+                                "key": "field_portfolio_faq_items",
+                                "label": "Вопросы и ответы",
+                                "name": "faq_items",
+                                "aria-label": "",
+                                "type": "repeater",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "min": 0,
+                                "max": 0,
+                                "layout": "row",
+                                "button_label": "Добавить вопрос",
+                                "collapsed": "",
+                                "rows_per_page": 20,
+                                "sub_fields": [
+                                    {
+                                        "key": "field_portfolio_faq_item_question",
+                                        "label": "Вопрос",
+                                        "name": "question",
+                                        "aria-label": "",
+                                        "type": "text",
+                                        "instructions": "",
+                                        "required": 0,
+                                        "conditional_logic": 0,
+                                        "wrapper": {
+                                            "width": "",
+                                            "class": "",
+                                            "id": ""
+                                        },
+                                        "default_value": "",
+                                        "maxlength": "",
+                                        "allow_in_bindings": 0,
+                                        "placeholder": "",
+                                        "prepend": "",
+                                        "append": ""
+                                    },
+                                    {
+                                        "key": "field_portfolio_faq_item_answer",
+                                        "label": "Ответ",
+                                        "name": "answer",
+                                        "aria-label": "",
+                                        "type": "wysiwyg",
+                                        "instructions": "",
+                                        "required": 0,
+                                        "conditional_logic": 0,
+                                        "wrapper": {
+                                            "width": "",
+                                            "class": "",
+                                            "id": ""
+                                        },
+                                        "default_value": "",
+                                        "allow_in_bindings": 0,
+                                        "tabs": "all",
+                                        "toolbar": "basic",
+                                        "media_upload": 1,
+                                        "delay": 0
+                                    }
+                                ]
+                            }
+                        ],
+                        "min": "",
+                        "max": ""
+                    },
+                    "layout_portfolio_seo_content": {
+                        "key": "layout_portfolio_seo_content",
+                        "name": "seo_content",
+                        "label": "SEO-контент / раскрывающиеся разделы",
+                        "display": "block",
+                        "sub_fields": [
+                            {
+                                "key": "field_portfolio_seo_admin_title",
+                                "label": "Название блока для админки",
+                                "name": "admin_title",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "Используется только в админке для удобной навигации.",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "50",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": ""
+                            },
+                            {
+                                "key": "field_portfolio_seo_section_id",
+                                "label": "ID секции",
+                                "name": "section_id",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "Без #. Например: portfolio-grid.",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "25",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": ""
+                            },
+                            {
+                                "key": "field_portfolio_seo_section_class",
+                                "label": "CSS-класс секции",
+                                "name": "section_class",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "Дополнительный CSS-класс без точки.",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "25",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": ""
+                            },
+                            {
+                                "key": "field_portfolio_seo_hide",
+                                "label": "Скрыть секцию",
+                                "name": "hide_section",
+                                "aria-label": "",
+                                "type": "true_false",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "25",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "message": "",
+                                "default_value": 0,
+                                "allow_in_bindings": 0,
+                                "ui": 1,
+                                "ui_on_text": "",
+                                "ui_off_text": ""
+                            },
+                            {
+                                "key": "field_portfolio_seo_content_section_background",
+                                "label": "Фон секции",
+                                "name": "section_background",
+                                "aria-label": "",
+                                "type": "select",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "20",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "choices": {
+                                    "none": "Не задавать",
+                                    "white": "Белый фон",
+                                    "black": "Чёрный фон"
+                                },
+                                "default_value": "none",
+                                "return_format": "value",
+                                "multiple": 0,
+                                "allow_null": 0,
+                                "ui": 1,
+                                "ajax": 0,
+                                "placeholder": ""
+                            },
+                            {
+                                "key": "field_seo_content_padding_top",
+                                "label": "Паддинг сверху",
+                                "name": "padding_top",
+                                "aria-label": "",
+                                "type": "number",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "25",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "min": 0,
+                                "max": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "step": 1,
+                                "prepend": "",
+                                "append": "px"
+                            },
+                            {
+                                "key": "field_seo_content_padding_bottom",
+                                "label": "Паддинг снизу",
+                                "name": "padding_bottom",
+                                "aria-label": "",
+                                "type": "number",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "25",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "min": 0,
+                                "max": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "step": 1,
+                                "prepend": "",
+                                "append": "px"
+                            },
+                            {
+                                "key": "field_seo_content_margin_top",
+                                "label": "Маржин сверху",
+                                "name": "margin_top",
+                                "aria-label": "",
+                                "type": "number",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "25",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "min": 0,
+                                "max": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "step": 1,
+                                "prepend": "",
+                                "append": "px"
+                            },
+                            {
+                                "key": "field_seo_content_margin_bottom",
+                                "label": "Маржин снизу",
+                                "name": "margin_bottom",
+                                "aria-label": "",
+                                "type": "number",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "25",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "min": 0,
+                                "max": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "step": 1,
+                                "prepend": "",
+                                "append": "px"
+                            },
+                            {
+                                "key": "field_portfolio_seo_external",
+                                "label": "Использовать контент с другой страницы",
+                                "name": "use_external_content",
+                                "aria-label": "",
+                                "type": "true_false",
+                                "instructions": "Позволяет переиспользовать такую же секцию с другой страницы.",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "50",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "message": "",
+                                "default_value": 0,
+                                "allow_in_bindings": 0,
+                                "ui": 1,
+                                "ui_on_text": "",
+                                "ui_off_text": ""
+                            },
+                            {
+                                "key": "field_portfolio_seo_source_page",
+                                "label": "Страница-источник",
+                                "name": "source_page",
+                                "aria-label": "",
+                                "type": "post_object",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": [
+                                    [
+                                        {
+                                            "field": "field_portfolio_seo_external",
+                                            "operator": "==",
+                                            "value": "1"
+                                        }
+                                    ]
+                                ],
+                                "wrapper": {
+                                    "width": "50",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "post_type": [
+                                    "page"
+                                ],
+                                "post_status": [
+                                    "publish"
+                                ],
+                                "taxonomy": "",
+                                "return_format": "id",
+                                "multiple": 0,
+                                "allow_null": 1,
+                                "allow_in_bindings": 0,
+                                "bidirectional": 0,
+                                "ui": 1,
+                                "bidirectional_target": []
+                            },
+                            {
+                                "key": "field_portfolio_seo_source_section",
+                                "label": "ID секции-источника",
+                                "name": "source_section_id",
+                                "aria-label": "",
+                                "type": "text",
+                                "instructions": "Укажите section_id блока на выбранной странице.",
+                                "required": 0,
+                                "conditional_logic": [
+                                    [
+                                        {
+                                            "field": "field_portfolio_seo_external",
+                                            "operator": "==",
+                                            "value": "1"
+                                        }
+                                    ]
+                                ],
+                                "wrapper": {
+                                    "width": "50",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "maxlength": "",
+                                "allow_in_bindings": 0,
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": ""
+                            },
+                            {
+                                "key": "field_portfolio_seo_items",
+                                "label": "SEO-разделы",
+                                "name": "seo_items",
+                                "aria-label": "",
+                                "type": "repeater",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "min": 0,
+                                "max": 0,
+                                "layout": "row",
+                                "button_label": "Добавить SEO-раздел",
+                                "collapsed": "field_portfolio_seo_item_title",
+                                "rows_per_page": 20,
+                                "sub_fields": [
+                                    {
+                                        "key": "field_portfolio_page_v2_seo_section_type",
+                                        "label": "Тип раздела",
+                                        "name": "section_type",
+                                        "aria-label": "",
+                                        "type": "select",
+                                        "instructions": "Выберите структуру раздела.",
+                                        "required": 1,
+                                        "conditional_logic": 0,
+                                        "wrapper": {
+                                            "width": "30",
+                                            "class": "",
+                                            "id": ""
+                                        },
+                                        "choices": {
+                                            "note": "Примечание",
+                                            "columns": "Колонки"
+                                        },
+                                        "default_value": "note",
+                                        "return_format": "value",
+                                        "multiple": 0,
+                                        "allow_null": 0,
+                                        "ui": 1,
+                                        "ajax": 0,
+                                        "placeholder": ""
+                                    },
+                                    {
+                                        "key": "field_portfolio_seo_item_title",
+                                        "label": "Заголовок",
+                                        "name": "title",
+                                        "aria-label": "",
+                                        "type": "text",
+                                        "instructions": "",
+                                        "required": 0,
+                                        "conditional_logic": 0,
+                                        "wrapper": {
+                                            "width": "50",
+                                            "class": "",
+                                            "id": ""
+                                        },
+                                        "default_value": "",
+                                        "maxlength": "",
+                                        "allow_in_bindings": 0,
+                                        "placeholder": "",
+                                        "prepend": "",
+                                        "append": ""
+                                    },
+                                    {
+                                        "key": "field_portfolio_seo_item_opened",
+                                        "label": "Открыт по умолчанию",
+                                        "name": "opened_by_default",
+                                        "aria-label": "",
+                                        "type": "true_false",
+                                        "instructions": "",
+                                        "required": 0,
+                                        "conditional_logic": 0,
+                                        "wrapper": {
+                                            "width": "20",
+                                            "class": "",
+                                            "id": ""
+                                        },
+                                        "message": "",
+                                        "default_value": 0,
+                                        "allow_in_bindings": 0,
+                                        "ui": 1,
+                                        "ui_on_text": "",
+                                        "ui_off_text": ""
+                                    },
+                                    {
+                                        "key": "field_portfolio_seo_content_seo_note_content",
+                                        "label": "Контент",
+                                        "name": "note_content",
+                                        "aria-label": "",
+                                        "type": "wysiwyg",
+                                        "instructions": "",
+                                        "required": 0,
+                                        "conditional_logic": [
+                                            [
+                                                {
+                                                    "field": "field_portfolio_page_v2_seo_section_type",
+                                                    "operator": "==",
+                                                    "value": "note"
+                                                }
+                                            ]
+                                        ],
+                                        "wrapper": {
+                                            "width": "",
+                                            "class": "",
+                                            "id": ""
+                                        },
+                                        "default_value": "",
+                                        "tabs": "all",
+                                        "toolbar": "basic",
+                                        "media_upload": 1,
+                                        "delay": 0
+                                    },
+                                    {
+                                        "key": "field_portfolio_seo_content_seo_columns_content",
+                                        "label": "Контент",
+                                        "name": "content",
+                                        "aria-label": "",
+                                        "type": "repeater",
+                                        "instructions": "Добавьте необходимое количество колонок.",
+                                        "required": 0,
+                                        "conditional_logic": [
+                                            [
+                                                {
+                                                    "field": "field_portfolio_page_v2_seo_section_type",
+                                                    "operator": "==",
+                                                    "value": "columns"
+                                                }
+                                            ]
+                                        ],
+                                        "wrapper": {
+                                            "width": "",
+                                            "class": "",
+                                            "id": ""
+                                        },
+                                        "min": 0,
+                                        "max": 0,
+                                        "layout": "row",
+                                        "button_label": "Добавить колонку",
+                                        "collapsed": "",
+                                        "rows_per_page": 20,
+                                        "sub_fields": [
+                                            {
+                                                "key": "field_portfolio_seo_content_seo_column_content",
+                                                "label": "Контент колонки",
+                                                "name": "column_content",
+                                                "aria-label": "",
+                                                "type": "wysiwyg",
+                                                "instructions": "",
+                                                "required": 0,
+                                                "conditional_logic": 0,
+                                                "wrapper": {
+                                                    "width": "",
+                                                    "class": "",
+                                                    "id": ""
+                                                },
+                                                "default_value": "",
+                                                "tabs": "all",
+                                                "toolbar": "basic",
+                                                "media_upload": 1,
+                                                "delay": 0
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ],
+                        "min": "",
+                        "max": ""
+                    }
+                },
+                "button_label": "Добавить секцию",
+                "min": "",
+                "max": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "page_template",
+                    "operator": "==",
+                    "value": "page-portfolio.php"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": [
+            "the_content",
+            "excerpt",
+            "discussion",
+            "comments",
+            "revisions",
+            "author",
+            "format",
+            "page_attributes",
+            "featured_image",
+            "categories",
+            "tags",
+            "send-trackbacks"
+        ],
+        "active": true,
+        "description": "Гибкие секции для обычной страницы с шаблоном page-portfolio.php.",
+        "show_in_rest": 0
+    }
+]
