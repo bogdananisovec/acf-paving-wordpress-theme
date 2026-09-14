@@ -24,7 +24,10 @@ $cta     = is_array( $section['cta'] ?? null ) ? $section['cta'] : array();
 				<aside class="<?php echo esc_attr( $block ); ?>__cta">
 					<?php if ( ! empty( $cta['icon'] ) ) : ?>
 						<span class="<?php echo esc_attr( $block ); ?>__cta-icon">
-							<?php ukladka_trotuarnoy_plitki_render_image( $cta['icon'], $block . '__cta-icon-image', 'full' ); ?>
+							<?php
+							$cta_icon_id = ukladka_trotuarnoy_plitki_get_image_id( $cta['icon'] );
+							echo wp_get_attachment_image( $cta_icon_id, 'full', false, array( 'class' => $block . '__cta-icon-image', 'loading' => 'eager' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+							?>
 						</span>
 					<?php endif; ?>
 					<span class="<?php echo esc_attr( $block ); ?>__cta-divider" aria-hidden="true"></span>

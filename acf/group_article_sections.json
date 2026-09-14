@@ -346,7 +346,7 @@
                         },
                         {
                             "key": "field_article_content_source_post",
-                            "label": "Запись \/ страница-источник",
+                            "label": "Запись / страница-источник",
                             "name": "source_page",
                             "aria-label": "",
                             "type": "post_object",
@@ -769,7 +769,7 @@
                         },
                         {
                             "key": "field_article_cta_source_post",
-                            "label": "Запись \/ страница-источник",
+                            "label": "Запись / страница-источник",
                             "name": "source_page",
                             "aria-label": "",
                             "type": "post_object",
@@ -1220,7 +1220,7 @@
                         },
                         {
                             "key": "field_article_faq_source_post",
-                            "label": "Запись \/ страница-источник",
+                            "label": "Запись / страница-источник",
                             "name": "source_page",
                             "aria-label": "",
                             "type": "post_object",
@@ -1380,7 +1380,7 @@
                 "layout_article_seo": {
                     "key": "layout_article_seo",
                     "name": "seo_content",
-                    "label": "SEO-контент \/ раскрывающиеся разделы",
+                    "label": "SEO-контент / раскрывающиеся разделы",
                     "display": "block",
                     "sub_fields": [
                         {
@@ -1602,7 +1602,7 @@
                         },
                         {
                             "key": "field_article_seo_source_post",
-                            "label": "Запись \/ страница-источник",
+                            "label": "Запись / страница-источник",
                             "name": "source_page",
                             "aria-label": "",
                             "type": "post_object",
@@ -1851,7 +1851,7 @@
         "the_content"
     ],
     "active": true,
-    "description": "ACF Flexible Content для single.php \/ шаблона статей. Первый экран использует заголовок записи, изображение и автоматически собранное содержание.",
+    "description": "ACF Flexible Content для single.php / шаблона статей. Первый экран использует заголовок записи, изображение и автоматически собранное содержание.",
     "show_in_rest": 0,
     "modified": 1787587495
 }

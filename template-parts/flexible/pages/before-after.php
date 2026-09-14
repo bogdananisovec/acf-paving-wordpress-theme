@@ -53,6 +53,11 @@ $after   = $section['after_image'] ?? 0;
 							<figcaption class="before-after__label before-after__label--before"><?php echo esc_html( $section['before_label'] ?: 'До' ); ?></figcaption>
 						</figure>
 
+						<div class="before-after__labels" aria-hidden="true">
+							<span class="before-after__label before-after__label--mobile-after"><?php echo esc_html( $section['after_label'] ?: 'После' ); ?></span>
+							<span class="before-after__label before-after__label--mobile-before"><?php echo esc_html( $section['before_label'] ?: 'До' ); ?></span>
+						</div>
+
 						<div class="before-after__divider" aria-hidden="true">
 							<span class="before-after__handle">
 								<span class="before-after__handle-arrow before-after__handle-arrow--left"></span>

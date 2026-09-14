@@ -1,6 +1,8 @@
 <?php
 /**
  * Front page template.
+ * Template Name: Главная
+ * Template Post Type: page
  *
  * @package ukladka-trotuarnoy-plitki
  */

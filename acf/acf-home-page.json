@@ -18,6 +18,842 @@
                     "id": ""
                 },
                 "layouts": {
+                    "hero_quiz_modal": {
+                        "key": "layout_home_hero_quiz_modal",
+                        "name": "hero_quiz_modal",
+                        "label": "Первый экран квиз модалка",
+                        "display": "block",
+                        "sub_fields": [
+                            {
+                                "key": "field_home_hero_quiz_modal_modal_hero",
+                                "name": "modal_hero",
+                                "label": "Первый экран с модальным квизом",
+                                "type": "group",
+                                "conditional_logic": 0,
+                                "sub_fields": [
+                                    {
+                                        "key": "field_home_hero_quiz_modal_modal_price",
+                                        "name": "price",
+                                        "label": "Цена",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "key": "field_home_hero_quiz_modal_modal_description",
+                                        "name": "description",
+                                        "label": "Описание",
+                                        "type": "textarea",
+                                        "new_lines": ""
+                                    },
+                                    {
+                                        "key": "field_home_hero_quiz_modal_modal_cta_button_id",
+                                        "name": "cta_button",
+                                        "label": "Кнопка открытия квиза",
+                                        "type": "select",
+                                        "choices": {},
+                                        "ui": 1,
+                                        "instructions": "Кнопка из глобальных настроек сайта."
+                                    },
+                                    {
+                                        "key": "field_home_hero_quiz_modal_modal_modal_title",
+                                        "name": "modal_title",
+                                        "label": "Заголовок модального окна",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "key": "field_home_hero_quiz_modal_modal_disclaimer",
+                                        "name": "disclaimer",
+                                        "label": "Примечание к расчёту",
+                                        "type": "textarea",
+                                        "new_lines": ""
+                                    },
+                                    {
+                                        "key": "field_home_hero_quiz_modal_modal_benefits",
+                                        "name": "benefits",
+                                        "label": "Преимущества",
+                                        "type": "repeater",
+                                        "layout": "block",
+                                        "sub_fields": [
+                                            {
+                                                "key": "field_home_hero_quiz_modal_benefit_number",
+                                                "name": "number",
+                                                "label": "Номер",
+                                                "type": "text"
+                                            },
+                                            {
+                                                "key": "field_home_hero_quiz_modal_benefit_icon",
+                                                "name": "icon",
+                                                "label": "Иконка",
+                                                "type": "image",
+                                                "return_format": "id",
+                                                "preview_size": "thumbnail",
+                                                "library": "all"
+                                            },
+                                            {
+                                                "key": "field_home_hero_quiz_modal_benefit_title",
+                                                "name": "title",
+                                                "label": "Заголовок",
+                                                "type": "textarea",
+                                                "new_lines": ""
+                                            },
+                                            {
+                                                "key": "field_home_hero_quiz_modal_benefit_description",
+                                                "name": "description",
+                                                "label": "Описание",
+                                                "type": "textarea",
+                                                "new_lines": ""
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "key": "field_home_hero_quiz_modal_admin_title",
+                                "name": "admin_title",
+                                "label": "Название блока для админки",
+                                "type": "text"
+                            },
+                            {
+                                "key": "field_home_hero_quiz_modal_section_id",
+                                "name": "section_id",
+                                "label": "ID секции",
+                                "type": "text"
+                            },
+                            {
+                                "key": "field_home_hero_quiz_modal_hide_section",
+                                "name": "hide_section",
+                                "label": "Скрыть секцию",
+                                "type": "true_false",
+                                "ui": 1
+                            },
+                            {
+                                "key": "field_home_hero_quiz_modal_section_background",
+                                "name": "section_background",
+                                "label": "Фон секции",
+                                "type": "select",
+                                "choices": {
+                                    "none": "Без фона",
+                                    "white": "Белый",
+                                    "black": "Черный",
+                                    "beige": "Бежевый"
+                                },
+                                "default_value": "black"
+                            },
+                            {
+                                "key": "field_home_hero_quiz_modal_title_accent",
+                                "name": "title_accent",
+                                "label": "Заголовок: выделенная строка",
+                                "type": "text"
+                            },
+                            {
+                                "key": "field_home_hero_quiz_modal_title",
+                                "name": "title",
+                                "label": "Заголовок: вторая строка",
+                                "type": "text"
+                            },
+                            {
+                                "key": "field_home_hero_quiz_modal_background_image",
+                                "name": "background_image",
+                                "label": "Фоновое изображение ПК",
+                                "type": "image",
+                                "return_format": "id",
+                                "preview_size": "thumbnail",
+                                "library": "all"
+                            },
+                            {
+                                "key": "field_home_hero_quiz_modal_mobile_image",
+                                "name": "mobile_image",
+                                "label": "Изображение на мобильном",
+                                "type": "image",
+                                "return_format": "id",
+                                "preview_size": "thumbnail",
+                                "library": "all"
+                            },
+                            {
+                                "key": "field_home_hero_quiz_modal_zone_title",
+                                "name": "zone_title",
+                                "label": "Первый вопрос на ПК",
+                                "type": "text"
+                            },
+                            {
+                                "key": "field_home_hero_quiz_modal_zone_title_mobile",
+                                "name": "zone_title_mobile",
+                                "label": "Первый вопрос на мобильном",
+                                "type": "text"
+                            },
+                            {
+                                "key": "field_home_hero_quiz_modal_zone_options",
+                                "name": "zone_options",
+                                "label": "Зоны мощения",
+                                "type": "repeater",
+                                "layout": "row",
+                                "button_label": "Добавить вариант",
+                                "sub_fields": [
+                                    {
+                                        "key": "field_home_hero_quiz_modal_zone_options_label",
+                                        "name": "label",
+                                        "label": "Название",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "key": "field_home_hero_quiz_modal_zone_options_image",
+                                        "name": "image",
+                                        "label": "Изображение",
+                                        "type": "image",
+                                        "return_format": "id",
+                                        "preview_size": "thumbnail",
+                                        "library": "all"
+                                    },
+                                    {
+                                        "key": "field_home_hero_quiz_modal_zone_options_selected",
+                                        "name": "selected",
+                                        "label": "Выбрано изначально",
+                                        "type": "true_false",
+                                        "ui": 1
+                                    }
+                                ]
+                            },
+                            {
+                                "key": "field_home_hero_quiz_modal_area_title",
+                                "name": "area_title",
+                                "label": "Вопрос о площади",
+                                "type": "text"
+                            },
+                            {
+                                "key": "field_home_hero_quiz_modal_area_value",
+                                "name": "area_value",
+                                "label": "Начальная площадь",
+                                "type": "number",
+                                "min": 1,
+                                "default_value": 62
+                            },
+                            {
+                                "key": "field_home_hero_quiz_modal_area_unit",
+                                "name": "area_unit",
+                                "label": "Единица площади",
+                                "type": "text"
+                            },
+                            {
+                                "key": "field_home_hero_quiz_modal_area_options",
+                                "name": "area_options",
+                                "label": "Варианты площади",
+                                "type": "repeater",
+                                "layout": "row",
+                                "button_label": "Добавить вариант",
+                                "sub_fields": [
+                                    {
+                                        "key": "field_home_hero_quiz_modal_area_options_label",
+                                        "name": "label",
+                                        "label": "Название",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "key": "field_home_hero_quiz_modal_area_options_min",
+                                        "name": "min",
+                                        "label": "Минимум",
+                                        "type": "number"
+                                    },
+                                    {
+                                        "key": "field_home_hero_quiz_modal_area_options_max",
+                                        "name": "max",
+                                        "label": "Максимум",
+                                        "type": "number"
+                                    },
+                                    {
+                                        "key": "field_home_hero_quiz_modal_area_options_value",
+                                        "name": "value",
+                                        "label": "Значение при выборе",
+                                        "type": "number"
+                                    },
+                                    {
+                                        "key": "field_home_hero_quiz_modal_area_options_unknown",
+                                        "name": "unknown",
+                                        "label": "Требуется замер",
+                                        "type": "true_false",
+                                        "ui": 1
+                                    }
+                                ]
+                            },
+                            {
+                                "key": "field_home_hero_quiz_modal_foundation_title",
+                                "name": "foundation_title",
+                                "label": "Вопрос об основании",
+                                "type": "text"
+                            },
+                            {
+                                "key": "field_home_hero_quiz_modal_foundation_options",
+                                "name": "foundation_options",
+                                "label": "Варианты основания",
+                                "type": "repeater",
+                                "layout": "row",
+                                "button_label": "Добавить вариант",
+                                "sub_fields": [
+                                    {
+                                        "key": "field_home_hero_quiz_modal_foundation_options_label",
+                                        "name": "label",
+                                        "label": "Название",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "key": "field_home_hero_quiz_modal_foundation_options_selected",
+                                        "name": "selected",
+                                        "label": "Выбрано изначально",
+                                        "type": "true_false",
+                                        "ui": 1
+                                    }
+                                ]
+                            },
+                            {
+                                "key": "field_home_hero_quiz_modal_load_title",
+                                "name": "load_title",
+                                "label": "Вопрос о нагрузке",
+                                "type": "text"
+                            },
+                            {
+                                "key": "field_home_hero_quiz_modal_load_options",
+                                "name": "load_options",
+                                "label": "Варианты нагрузки",
+                                "type": "repeater",
+                                "layout": "row",
+                                "button_label": "Добавить вариант",
+                                "sub_fields": [
+                                    {
+                                        "key": "field_home_hero_quiz_modal_load_options_label",
+                                        "name": "label",
+                                        "label": "Название",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "key": "field_home_hero_quiz_modal_load_options_icon",
+                                        "name": "icon",
+                                        "label": "Иконка",
+                                        "type": "image",
+                                        "return_format": "id",
+                                        "preview_size": "thumbnail",
+                                        "library": "all"
+                                    },
+                                    {
+                                        "key": "field_home_hero_quiz_modal_load_options_selected",
+                                        "name": "selected",
+                                        "label": "Выбрано изначально",
+                                        "type": "true_false",
+                                        "ui": 1
+                                    }
+                                ]
+                            },
+                            {
+                                "key": "field_home_hero_quiz_modal_progress_label",
+                                "name": "progress_label",
+                                "label": "Подпись прогресса",
+                                "type": "text",
+                                "instructions": "Используйте {current} и {total}.",
+                                "default_value": "Вопрос {current} из {total}"
+                            },
+                            {
+                                "key": "field_home_hero_quiz_modal_last_step_label",
+                                "name": "last_step_label",
+                                "label": "Подпись последнего шага",
+                                "type": "text"
+                            },
+                            {
+                                "key": "field_home_hero_quiz_modal_contact_form",
+                                "name": "contact_form",
+                                "label": "Форма контактов",
+                                "type": "post_object",
+                                "post_type": [
+                                    "site_form"
+                                ],
+                                "return_format": "id",
+                                "ui": 1,
+                                "allow_null": 0
+                            },
+                            {
+                                "key": "field_home_hero_quiz_modal_next_button_id",
+                                "default_value": "hero_quiz_next",
+                                "name": "next_button",
+                                "label": "Кнопка Далее",
+                                "type": "select",
+                                "ui": 1,
+                                "choices": {},
+                                "instructions": "Кнопка из глобальных настроек сайта."
+                            },
+                            {
+                                "key": "field_home_hero_quiz_modal_back_button_id",
+                                "default_value": "hero_quiz_back",
+                                "name": "back_button",
+                                "label": "Кнопка Назад",
+                                "type": "select",
+                                "ui": 1,
+                                "choices": {},
+                                "instructions": "Кнопка из глобальных настроек сайта."
+                            },
+                            {
+                                "key": "field_home_hero_quiz_modal_submit_button_id",
+                                "default_value": "hero_quiz_submit",
+                                "name": "submit_button",
+                                "label": "Кнопка отправки",
+                                "type": "select",
+                                "ui": 1,
+                                "choices": {},
+                                "instructions": "Кнопка из глобальных настроек сайта."
+                            },
+                            {
+                                "key": "field_home_hero_quiz_modal_submit_text_mobile",
+                                "name": "submit_text_mobile",
+                                "label": "Текст кнопки отправки на мобильном",
+                                "type": "text"
+                            },
+                            {
+                                "key": "field_home_hero_quiz_modal_reviews",
+                                "name": "reviews",
+                                "label": "Рейтинг и отзывы",
+                                "type": "group",
+                                "layout": "block",
+                                "sub_fields": [
+                                    {
+                                        "key": "field_home_hero_quiz_modal_reviews_reviews_count",
+                                        "instructions": "Резервное значение, если глобальный источник не выбран.",
+                                        "name": "reviews_count",
+                                        "label": "Количество отзывов",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "key": "field_home_hero_quiz_modal_reviews_rating",
+                                        "instructions": "Резервное значение, если глобальный источник не выбран.",
+                                        "name": "rating",
+                                        "label": "Рейтинг",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "key": "field_home_hero_quiz_modal_reviews_star_icon",
+                                        "name": "star_icon",
+                                        "label": "Звезда",
+                                        "type": "image",
+                                        "return_format": "id",
+                                        "preview_size": "thumbnail",
+                                        "library": "all"
+                                    },
+                                    {
+                                        "key": "field_home_hero_quiz_modal_reviews_rating_icon",
+                                        "name": "rating_icon",
+                                        "label": "Иконка рейтинга",
+                                        "type": "image",
+                                        "return_format": "id",
+                                        "preview_size": "thumbnail",
+                                        "library": "all"
+                                    },
+                                    {
+                                        "key": "field_home_hero_quiz_modal_reviews_avatars",
+                                        "name": "avatars",
+                                        "label": "Аватары",
+                                        "type": "repeater",
+                                        "layout": "row",
+                                        "button_label": "Добавить вариант",
+                                        "sub_fields": [
+                                            {
+                                                "key": "field_home_hero_quiz_modal_avatars_image",
+                                                "name": "image",
+                                                "label": "Фото",
+                                                "type": "image",
+                                                "return_format": "id",
+                                                "preview_size": "thumbnail",
+                                                "library": "all"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "key": "field_home_hero_quiz_modal_reviews_more_text",
+                                        "name": "more_text",
+                                        "label": "Подпись после аватаров",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "key": "field_home_hero_quiz_modal_reviews_source_id",
+                                        "name": "source_id",
+                                        "label": "ID глобального источника рейтинга",
+                                        "type": "text",
+                                        "instructions": "ID из глобального блока рейтингов, например yandex. Рейтинг и количество отзывов берутся оттуда."
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "hero_quiz": {
+                        "key": "layout_home_hero_quiz",
+                        "name": "hero_quiz",
+                        "label": "Первый экран квиз",
+                        "display": "block",
+                        "sub_fields": [
+                            {
+                                "key": "field_home_hero_quiz_admin_title",
+                                "name": "admin_title",
+                                "label": "Название блока для админки",
+                                "type": "text"
+                            },
+                            {
+                                "key": "field_home_hero_quiz_section_id",
+                                "name": "section_id",
+                                "label": "ID секции",
+                                "type": "text"
+                            },
+                            {
+                                "key": "field_home_hero_quiz_hide_section",
+                                "name": "hide_section",
+                                "label": "Скрыть секцию",
+                                "type": "true_false",
+                                "ui": 1
+                            },
+                            {
+                                "key": "field_home_hero_quiz_section_background",
+                                "name": "section_background",
+                                "label": "Фон секции",
+                                "type": "select",
+                                "choices": {
+                                    "none": "Без фона",
+                                    "white": "Белый",
+                                    "black": "Черный",
+                                    "beige": "Бежевый"
+                                },
+                                "default_value": "black"
+                            },
+                            {
+                                "key": "field_home_hero_quiz_title_accent",
+                                "name": "title_accent",
+                                "label": "Заголовок: выделенная строка",
+                                "type": "text"
+                            },
+                            {
+                                "key": "field_home_hero_quiz_title",
+                                "name": "title",
+                                "label": "Заголовок: вторая строка",
+                                "type": "text"
+                            },
+                            {
+                                "key": "field_home_hero_quiz_background_image",
+                                "name": "background_image",
+                                "label": "Фоновое изображение ПК",
+                                "type": "image",
+                                "return_format": "id",
+                                "preview_size": "thumbnail",
+                                "library": "all"
+                            },
+                            {
+                                "key": "field_home_hero_quiz_mobile_image",
+                                "name": "mobile_image",
+                                "label": "Изображение на мобильном",
+                                "type": "image",
+                                "return_format": "id",
+                                "preview_size": "thumbnail",
+                                "library": "all"
+                            },
+                            {
+                                "key": "field_home_hero_quiz_zone_title",
+                                "name": "zone_title",
+                                "label": "Первый вопрос на ПК",
+                                "type": "text"
+                            },
+                            {
+                                "key": "field_home_hero_quiz_zone_title_mobile",
+                                "name": "zone_title_mobile",
+                                "label": "Первый вопрос на мобильном",
+                                "type": "text"
+                            },
+                            {
+                                "key": "field_home_hero_quiz_zone_options",
+                                "name": "zone_options",
+                                "label": "Зоны мощения",
+                                "type": "repeater",
+                                "layout": "row",
+                                "button_label": "Добавить вариант",
+                                "sub_fields": [
+                                    {
+                                        "key": "field_home_hero_quiz_zone_options_label",
+                                        "name": "label",
+                                        "label": "Название",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "key": "field_home_hero_quiz_zone_options_image",
+                                        "name": "image",
+                                        "label": "Изображение",
+                                        "type": "image",
+                                        "return_format": "id",
+                                        "preview_size": "thumbnail",
+                                        "library": "all"
+                                    },
+                                    {
+                                        "key": "field_home_hero_quiz_zone_options_selected",
+                                        "name": "selected",
+                                        "label": "Выбрано изначально",
+                                        "type": "true_false",
+                                        "ui": 1
+                                    }
+                                ]
+                            },
+                            {
+                                "key": "field_home_hero_quiz_area_title",
+                                "name": "area_title",
+                                "label": "Вопрос о площади",
+                                "type": "text"
+                            },
+                            {
+                                "key": "field_home_hero_quiz_area_value",
+                                "name": "area_value",
+                                "label": "Начальная площадь",
+                                "type": "number",
+                                "min": 1,
+                                "default_value": 62
+                            },
+                            {
+                                "key": "field_home_hero_quiz_area_unit",
+                                "name": "area_unit",
+                                "label": "Единица площади",
+                                "type": "text"
+                            },
+                            {
+                                "key": "field_home_hero_quiz_area_options",
+                                "name": "area_options",
+                                "label": "Варианты площади",
+                                "type": "repeater",
+                                "layout": "row",
+                                "button_label": "Добавить вариант",
+                                "sub_fields": [
+                                    {
+                                        "key": "field_home_hero_quiz_area_options_label",
+                                        "name": "label",
+                                        "label": "Название",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "key": "field_home_hero_quiz_area_options_min",
+                                        "name": "min",
+                                        "label": "Минимум",
+                                        "type": "number"
+                                    },
+                                    {
+                                        "key": "field_home_hero_quiz_area_options_max",
+                                        "name": "max",
+                                        "label": "Максимум",
+                                        "type": "number"
+                                    },
+                                    {
+                                        "key": "field_home_hero_quiz_area_options_value",
+                                        "name": "value",
+                                        "label": "Значение при выборе",
+                                        "type": "number"
+                                    },
+                                    {
+                                        "key": "field_home_hero_quiz_area_options_unknown",
+                                        "name": "unknown",
+                                        "label": "Требуется замер",
+                                        "type": "true_false",
+                                        "ui": 1
+                                    }
+                                ]
+                            },
+                            {
+                                "key": "field_home_hero_quiz_foundation_title",
+                                "name": "foundation_title",
+                                "label": "Вопрос об основании",
+                                "type": "text"
+                            },
+                            {
+                                "key": "field_home_hero_quiz_foundation_options",
+                                "name": "foundation_options",
+                                "label": "Варианты основания",
+                                "type": "repeater",
+                                "layout": "row",
+                                "button_label": "Добавить вариант",
+                                "sub_fields": [
+                                    {
+                                        "key": "field_home_hero_quiz_foundation_options_label",
+                                        "name": "label",
+                                        "label": "Название",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "key": "field_home_hero_quiz_foundation_options_selected",
+                                        "name": "selected",
+                                        "label": "Выбрано изначально",
+                                        "type": "true_false",
+                                        "ui": 1
+                                    }
+                                ]
+                            },
+                            {
+                                "key": "field_home_hero_quiz_load_title",
+                                "name": "load_title",
+                                "label": "Вопрос о нагрузке",
+                                "type": "text"
+                            },
+                            {
+                                "key": "field_home_hero_quiz_load_options",
+                                "name": "load_options",
+                                "label": "Варианты нагрузки",
+                                "type": "repeater",
+                                "layout": "row",
+                                "button_label": "Добавить вариант",
+                                "sub_fields": [
+                                    {
+                                        "key": "field_home_hero_quiz_load_options_label",
+                                        "name": "label",
+                                        "label": "Название",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "key": "field_home_hero_quiz_load_options_icon",
+                                        "name": "icon",
+                                        "label": "Иконка",
+                                        "type": "image",
+                                        "return_format": "id",
+                                        "preview_size": "thumbnail",
+                                        "library": "all"
+                                    },
+                                    {
+                                        "key": "field_home_hero_quiz_load_options_selected",
+                                        "name": "selected",
+                                        "label": "Выбрано изначально",
+                                        "type": "true_false",
+                                        "ui": 1
+                                    }
+                                ]
+                            },
+                            {
+                                "key": "field_home_hero_quiz_progress_label",
+                                "name": "progress_label",
+                                "label": "Подпись прогресса",
+                                "type": "text",
+                                "instructions": "Используйте {current} и {total}.",
+                                "default_value": "Вопрос {current} из {total}"
+                            },
+                            {
+                                "key": "field_home_hero_quiz_last_step_label",
+                                "name": "last_step_label",
+                                "label": "Подпись последнего шага",
+                                "type": "text"
+                            },
+                            {
+                                "key": "field_home_hero_quiz_contact_form",
+                                "name": "contact_form",
+                                "label": "Форма контактов",
+                                "type": "post_object",
+                                "post_type": [
+                                    "site_form"
+                                ],
+                                "return_format": "id",
+                                "ui": 1,
+                                "allow_null": 0
+                            },
+                            {
+                                "key": "field_home_hero_quiz_next_button_id",
+                                "default_value": "hero_quiz_next",
+                                "name": "next_button",
+                                "label": "Кнопка Далее",
+                                "type": "select",
+                                "ui": 1,
+                                "choices": {},
+                                "instructions": "Кнопка из глобальных настроек сайта."
+                            },
+                            {
+                                "key": "field_home_hero_quiz_back_button_id",
+                                "default_value": "hero_quiz_back",
+                                "name": "back_button",
+                                "label": "Кнопка Назад",
+                                "type": "select",
+                                "ui": 1,
+                                "choices": {},
+                                "instructions": "Кнопка из глобальных настроек сайта."
+                            },
+                            {
+                                "key": "field_home_hero_quiz_submit_button_id",
+                                "default_value": "hero_quiz_submit",
+                                "name": "submit_button",
+                                "label": "Кнопка отправки",
+                                "type": "select",
+                                "ui": 1,
+                                "choices": {},
+                                "instructions": "Кнопка из глобальных настроек сайта."
+                            },
+                            {
+                                "key": "field_home_hero_quiz_submit_text_mobile",
+                                "name": "submit_text_mobile",
+                                "label": "Текст кнопки отправки на мобильном",
+                                "type": "text"
+                            },
+                            {
+                                "key": "field_home_hero_quiz_reviews",
+                                "name": "reviews",
+                                "label": "Рейтинг и отзывы",
+                                "type": "group",
+                                "layout": "block",
+                                "sub_fields": [
+                                    {
+                                        "key": "field_home_hero_quiz_reviews_reviews_count",
+                                        "instructions": "Резервное значение, если глобальный источник не выбран.",
+                                        "name": "reviews_count",
+                                        "label": "Количество отзывов",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "key": "field_home_hero_quiz_reviews_rating",
+                                        "instructions": "Резервное значение, если глобальный источник не выбран.",
+                                        "name": "rating",
+                                        "label": "Рейтинг",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "key": "field_home_hero_quiz_reviews_star_icon",
+                                        "name": "star_icon",
+                                        "label": "Звезда",
+                                        "type": "image",
+                                        "return_format": "id",
+                                        "preview_size": "thumbnail",
+                                        "library": "all"
+                                    },
+                                    {
+                                        "key": "field_home_hero_quiz_reviews_rating_icon",
+                                        "name": "rating_icon",
+                                        "label": "Иконка рейтинга",
+                                        "type": "image",
+                                        "return_format": "id",
+                                        "preview_size": "thumbnail",
+                                        "library": "all"
+                                    },
+                                    {
+                                        "key": "field_home_hero_quiz_reviews_avatars",
+                                        "name": "avatars",
+                                        "label": "Аватары",
+                                        "type": "repeater",
+                                        "layout": "row",
+                                        "button_label": "Добавить вариант",
+                                        "sub_fields": [
+                                            {
+                                                "key": "field_home_hero_quiz_avatars_image",
+                                                "name": "image",
+                                                "label": "Фото",
+                                                "type": "image",
+                                                "return_format": "id",
+                                                "preview_size": "thumbnail",
+                                                "library": "all"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "key": "field_home_hero_quiz_reviews_more_text",
+                                        "name": "more_text",
+                                        "label": "Подпись после аватаров",
+                                        "type": "text"
+                                    },
+                                    {
+                                        "key": "field_home_hero_quiz_reviews_source_id",
+                                        "name": "source_id",
+                                        "label": "ID глобального источника рейтинга",
+                                        "type": "text",
+                                        "instructions": "ID из глобального блока рейтингов, например yandex. Рейтинг и количество отзывов берутся оттуда."
+                                    }
+                                ]
+                            }
+                        ]
+                    },
                     "hero": {
                         "key": "layout_paving_home_hero",
                         "name": "hero",

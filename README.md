@@ -1,58 +1,43 @@
-# ACF Paving WordPress Theme
+# Paving & Stone — Custom WordPress Theme
 
-English | [Deutsch](README.de.md)
+A custom WordPress/ACF website for paving services, with reusable content blocks and calculation interfaces.
 
-## Overview
+[Deutsch](README.de.md) · [Developer portfolio](https://portfolio.bogdananisovec.workers.dev/)
 
-ACF Paving WordPress Theme is a sanitized custom WordPress theme demo focused on ACF/Flexible Content, reusable PHP templates, responsive frontend implementation, calculators, reviews, portfolio sections, FAQ/SEO blocks, and editor-friendly content structures.
+![Project preview](docs/preview-1.webp)
 
-This repository is a sanitized portfolio version. Client-specific data, credentials, production endpoints and proprietary content have been removed or replaced with demo values.
+![Project preview](docs/preview-2.webp)
 
-## My Role
+## My contribution
 
-I implemented the WordPress theme architecture, ACF field groups, reusable section templates, responsive frontend behavior, calculators, form flows, and SEO-oriented content blocks.
+I developed the custom theme, ACF content structure, responsive templates and frontend interactions.
 
-## Key Features
+## Features
 
-- ACF-based flexible page sections.
-- Reusable PHP template-part architecture.
-- Calculator UI and frontend interaction logic.
-- Portfolio and review templates.
-- Form handling patterns with demo placeholders.
-- FAQ/SEO content structures for service landing pages.
-- Responsive CSS for Figma-to-WordPress style implementation.
+- ACF-managed pages, shared settings and reusable PHP sections.
+- Calculation/quiz interfaces and enquiry forms.
+- Project galleries, reviews, FAQs and service content.
+- Responsive layouts and structured content for technical SEO.
 
-## Tech Stack
+## Stack and structure
 
-WordPress, PHP, ACF, JavaScript, AJAX, CSS, responsive frontend, SEO/FAQ structures.
+WordPress, PHP, ACF Pro, JavaScript, CSS
 
-## What This Repository Demonstrates
+`acf/` contains field definitions; PHP templates and `inc/` contain rendering logic; frontend assets live alongside the theme.
 
-- Practical custom WordPress theme development for service-business websites.
-- Editor-friendly backend structure using ACF JSON.
-- Reusable rendering patterns across multiple landing-page templates.
-- Frontend attention to responsive behavior, calculators, forms, and structured SEO content.
+## Local setup
 
-## Architecture / Implementation
+1. Install WordPress and ACF Pro separately.
+2. Install this folder as a theme.
+3. Import/sync the JSON field groups in `acf/`.
+4. Create demo content, assign page templates and configure menus/global settings.
 
-- `functions.php` and `inc/` register theme behavior, helpers, post types, and form logic.
-- `acf/` stores sanitized field group definitions.
-- `template-parts/flexible/` contains reusable section templates.
-- `assets/js/theme.js` contains frontend interactions.
-- `assets/css/theme.css` contains responsive section styling.
+## Validation
 
-## Setup
+PHP syntax and JSON parsing were checked. A complete populated WordPress installation is not bundled.
 
-1. Copy the theme into `wp-content/themes/acf-paving-wordpress-theme`.
-2. Install and activate ACF Pro locally.
-3. Activate the theme.
-4. Sync ACF JSON from `acf/`.
-5. Add synthetic demo pages, reviews, portfolio items, and media before screenshots.
+## Scope of this public copy
 
-## Screenshots
+The code demonstrates custom theme and editor architecture. Client content, credentials and the WordPress database are excluded.
 
-Not included. Production client media was excluded from the public portfolio copy.
-
-## Notes
-
-The original commercial content, contacts, locations, production domains, tracking IDs, and private media were removed or replaced with safe demo placeholders where applicable.
+This is a standalone portfolio source copy. Production databases, credentials, customer records and local runtime data are excluded. Third-party packages and assets retain their respective rights; their inclusion does not imply authorship.

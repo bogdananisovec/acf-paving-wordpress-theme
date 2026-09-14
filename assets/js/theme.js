@@ -62,6 +62,18 @@
 
 			if (link && submenu) {
 				submenu.dataset.title = link.textContent.trim();
+
+				function alignSubmenu() {
+					submenu.classList.remove('sub-menu--align-right');
+					if (!window.matchMedia('(min-width: 1200px)').matches || !submenu.getClientRects().length) {
+						return;
+					}
+					submenu.classList.toggle('sub-menu--align-right', submenu.getBoundingClientRect().right > document.documentElement.clientWidth - 12);
+				}
+
+				item.addEventListener('mouseenter', alignSubmenu);
+				item.addEventListener('focusin', alignSubmenu);
+				window.addEventListener('resize', alignSubmenu);
 			}
 		});
 	}
@@ -77,7 +89,20 @@
 			modal.querySelectorAll(
 				'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
 			)
-		);
+		).filter(function (element) {
+			return !modal.matches('.hero-quiz-modal') || (
+				element.tabIndex !== -1 && !element.closest('[inert], [hidden], [aria-hidden="true"]') &&
+				element.getClientRects().length > 0 && getComputedStyle(element).visibility !== 'hidden'
+			);
+		});
+	}
+
+	function positionQuizModal(modal) {
+		if (modal.matches('.hero-quiz-modal')) {
+			const header = document.querySelector('.site-header');
+			const bottom = Math.max(0, header?.getBoundingClientRect().bottom || 0);
+			modal.style.setProperty('--hero-quiz-header-bottom', bottom + 'px');
+		}
 	}
 
 	function openModal(modal) {
@@ -86,6 +111,7 @@
 		}
 
 		lastFocusedElement = document.activeElement;
+		positionQuizModal(modal);
 		modal.classList.add('is-open');
 		modal.setAttribute('aria-hidden', 'false');
 		body.classList.add('is-locked');
@@ -116,7 +142,7 @@
 
 		if (opener) {
 			const id = (opener.dataset.modalTarget || '').replace(/^#/, '');
-			const modal = document.getElementById(id);
+			const modal = document.getElementById(id) || (id === 'callback' ? document.getElementById('modal-form') : null);
 
 			if (modal) {
 				event.preventDefault();
@@ -394,8 +420,89 @@
 	document.querySelectorAll('[data-photo-estimate]').forEach(function (form) {
 		const input = form.querySelector('[data-photo-input]');
 		const previews = form.querySelector('[data-photo-previews]');
+		const steps = Array.from(form.querySelectorAll('[data-photo-step]'));
+		const nextButtons = Array.from(form.querySelectorAll('[data-photo-next]'));
+		const previousButtons = Array.from(form.querySelectorAll('[data-photo-prev]'));
+		const stepMediaQuery = window.matchMedia('(max-width: 991px)');
 		const limit = Math.max(1, Number.parseInt(form.dataset.uploadLimit || '5', 10));
 		let previewUrls = [];
+		let currentStep = Math.max(0, steps.findIndex(function (step) {
+			return step.classList.contains('is-active');
+		}));
+
+		if (currentStep < 0) {
+			currentStep = 0;
+		}
+
+		const showStep = function (index) {
+			currentStep = Math.min(Math.max(index, 0), steps.length - 1);
+			steps.forEach(function (step, stepIndex) {
+				const isActive = stepIndex === currentStep;
+				step.classList.toggle('is-active', isActive);
+				step.toggleAttribute('hidden', !isActive);
+			});
+			form.dataset.currentStep = String(currentStep + 1);
+		};
+
+		const showAllSteps = function () {
+			steps.forEach(function (step) {
+				step.classList.remove('is-active');
+				step.removeAttribute('hidden');
+			});
+			form.dataset.currentStep = 'all';
+		};
+
+		const syncStepMode = function () {
+			if (!steps.length) {
+				return;
+			}
+
+			if (stepMediaQuery.matches) {
+				showStep(currentStep);
+				return;
+			}
+
+			showAllSteps();
+		};
+
+		const canLeaveCurrentStep = function () {
+			const activeStep = steps[currentStep];
+			const requiredFields = activeStep ? Array.from(activeStep.querySelectorAll('input[required], select[required], textarea[required]')) : [];
+
+			return requiredFields.every(function (field) {
+				return field.reportValidity();
+			});
+		};
+
+		syncStepMode();
+
+		if (typeof stepMediaQuery.addEventListener === 'function') {
+			stepMediaQuery.addEventListener('change', syncStepMode);
+		} else if (typeof stepMediaQuery.addListener === 'function') {
+			stepMediaQuery.addListener(syncStepMode);
+		}
+
+		nextButtons.forEach(function (button) {
+			button.addEventListener('click', function () {
+				if (!stepMediaQuery.matches) {
+					return;
+				}
+
+				if (canLeaveCurrentStep()) {
+					showStep(currentStep + 1);
+				}
+			});
+		});
+
+		previousButtons.forEach(function (button) {
+			button.addEventListener('click', function () {
+				if (!stepMediaQuery.matches) {
+					return;
+				}
+
+				showStep(currentStep - 1);
+			});
+		});
 
 		if (!input || !previews) {
 			return;
@@ -768,6 +875,154 @@
 			}
 		});
 	}
+
+	document.querySelectorAll('[data-hero-quiz]').forEach(function (quiz) {
+		const form = quiz.querySelector('[data-site-form]');
+		const steps = Array.from(quiz.querySelectorAll('[data-hero-quiz-step]'));
+		const area = form?.querySelector('[name="area"]');
+		const presets = Array.from(form?.querySelectorAll('[name="area_preset"]') || []);
+		const lastControls = steps[steps.length - 1]?.querySelectorAll('[name="phone"], [name="privacy"], [type="submit"]');
+		const reviews = quiz.querySelector('.hero-quiz__reviews');
+		const panel = quiz.querySelector('.hero-quiz__panel');
+		const zones = quiz.querySelector('.hero-quiz__zones');
+		const mobile = window.matchMedia('(max-width: 767px)');
+		let current = 0;
+		let knownArea = area?.value || '';
+
+		if (!form || !steps.length) {
+			return;
+		}
+		if (quiz.matches('.hero-quiz-modal')) {
+			quiz.querySelectorAll('img').forEach(function (image) {
+				image.loading = 'eager';
+				if (image.sizes.startsWith('auto,')) {
+					image.sizes = image.sizes.slice(5).trim();
+				}
+			});
+		}
+
+		function placeReviews() {
+			if (reviews && panel && zones) {
+				(mobile.matches ? zones : panel).appendChild(reviews);
+			}
+		}
+
+		function showStep(index, focus) {
+			current = Math.max(0, Math.min(index, steps.length - 1));
+			quiz.dataset.step = String(current + 1);
+			steps.forEach(function (step, stepIndex) {
+				const active = current === stepIndex;
+				step.classList.toggle('is-active', active);
+				step.inert = !active;
+				step.setAttribute('aria-hidden', String(!active));
+			});
+			lastControls?.forEach(function (control) {
+				control.disabled = current !== steps.length - 1;
+			});
+			if (focus) {
+				const question = steps[current].querySelector('.hero-quiz__question');
+				const target = question?.getClientRects().length ? question : quiz.querySelector('.hero-quiz-modal__heading h2');
+				target?.focus({ preventScroll: true });
+			}
+		}
+
+		function syncPresets() {
+			if (!area) {
+				return;
+			}
+			const value = area.value === '' ? NaN : Number(area.value);
+			let match = null;
+			presets.forEach(function (preset) {
+				preset.checked = false;
+				const min = preset.dataset.min === '' ? -Infinity : Number(preset.dataset.min);
+				const max = preset.dataset.max === '' ? Infinity : Number(preset.dataset.max);
+				if (!match && preset.dataset.unknown !== '1' && Number.isFinite(value) && value >= min && value <= max) {
+					match = preset;
+				}
+			});
+			if (match) {
+				match.checked = true;
+			}
+		}
+
+		function nextStep() {
+			if (current === 1 && area) {
+				const unknown = presets.some(function (preset) {
+					return preset.checked && preset.dataset.unknown === '1';
+				});
+				area.setCustomValidity(unknown || Number(area.value) > 0 ? '' : 'Укажите площадь больше нуля или выберите «Не знаю, нужно замерить».');
+				if (!area.reportValidity()) {
+					return;
+				}
+			}
+			showStep(current + 1, true);
+		}
+
+		quiz.addEventListener('click', function (event) {
+			const control = event.target.closest('[data-hero-quiz-action]');
+			if (!control || !quiz.contains(control)) {
+				return;
+			}
+			if (control.dataset.heroQuizAction === 'next') {
+				nextStep();
+			} else if (control.dataset.heroQuizAction === 'back') {
+				showStep(current - 1, true);
+			}
+		});
+
+		area?.addEventListener('input', function () {
+			area.setCustomValidity('');
+			knownArea = area.value;
+			syncPresets();
+		});
+		presets.forEach(function (preset) {
+			preset.addEventListener('change', function () {
+				if (!area || !preset.checked) {
+					return;
+				}
+				area.setCustomValidity('');
+				if (preset.dataset.unknown === '1') {
+					if (area.value !== '') {
+						knownArea = area.value;
+					}
+					area.value = '';
+				} else {
+					area.value = preset.dataset.value || knownArea;
+					knownArea = area.value;
+				}
+			});
+		});
+
+		// Capture guards run before the existing shared AJAX submit listener.
+		form.addEventListener('submit', function (event) {
+			if (current < steps.length - 1) {
+				event.preventDefault();
+				event.stopImmediatePropagation();
+				nextStep();
+			}
+		}, true);
+		form.addEventListener('keydown', function (event) {
+			if (event.key === 'Enter' && current < steps.length - 1 && event.target.matches('input')) {
+				event.preventDefault();
+				nextStep();
+			}
+		});
+		form.addEventListener('reset', function () {
+			window.setTimeout(function () {
+				area?.setCustomValidity('');
+				knownArea = area?.value || '';
+				syncPresets();
+				showStep(0, false);
+			}, 0);
+		});
+		mobile.addEventListener('change', placeReviews);
+		if (quiz.matches('.hero-quiz-modal')) {
+			window.addEventListener('resize', function () { positionQuizModal(quiz); });
+		}
+		placeReviews();
+		syncPresets();
+		showStep(0, false);
+	});
 
 	document.querySelectorAll('[data-site-form]').forEach(function (form) {
 		form.addEventListener('submit', async function (event) {

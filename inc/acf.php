@@ -19,6 +19,67 @@ function ukladka_trotuarnoy_plitki_acf_load_json( $paths ) {
 add_filter( 'acf/settings/load_json', 'ukladka_trotuarnoy_plitki_acf_load_json' );
 
 /**
+ * Makes the existing homepage fields available to pages using its template.
+ */
+function ukladka_trotuarnoy_plitki_home_template_fields( $group ) {
+	if ( 'group_paving_home_page_final_review' === ( $group['key'] ?? '' ) ) {
+		$rule = array( array( 'param' => 'page_template', 'operator' => '==', 'value' => 'front-page.php' ) );
+		if ( ! in_array( $rule, $group['location'], true ) ) {
+			$group['location'][] = $rule;
+		}
+	}
+	return $group;
+}
+add_filter( 'acf/load_field_group', 'ukladka_trotuarnoy_plitki_home_template_fields' );
+
+/** Merge the two canonical quiz layouts without changing existing field definitions. */
+function ukladka_trotuarnoy_plitki_home_quiz_layout( $field ) {
+	static $quizzes = null;
+	if ( null === $quizzes ) {
+		$file = get_template_directory() . '/acf/acf-home-page.json';
+		$groups = is_readable( $file ) ? json_decode( file_get_contents( $file ), true ) : array();
+		$quizzes = array();
+		foreach ( array( 'hero_quiz', 'hero_quiz_modal' ) as $name ) {
+			$quiz = $groups[0]['fields'][0]['layouts'][ $name ] ?? array();
+			if ( ! $quiz ) { continue; }
+			foreach ( $quiz['sub_fields'] as &$sub_field ) {
+				$sub_field['parent'] = $quiz['key'];
+				$sub_field['parent_layout'] = $quiz['key'];
+				acf_add_local_field( $sub_field );
+				$sub_field = acf_get_field( $sub_field['key'] );
+			}
+			unset( $sub_field );
+			$quizzes[ $name ] = $quiz;
+		}
+	}
+	foreach ( $quizzes as $name => $quiz ) {
+		$found = false;
+		foreach ( (array) ( $field['layouts'] ?? array() ) as $layout_key => $layout ) {
+			if ( $name !== ( $layout['name'] ?? '' ) ) { continue; }
+			$existing = array_column( $layout['sub_fields'], 'key' );
+			foreach ( $quiz['sub_fields'] as $sub_field ) {
+				if ( ! in_array( $sub_field['key'], $existing, true ) ) {
+					$field['layouts'][ $layout_key ]['sub_fields'][] = $sub_field;
+				}
+			}
+			$found = true;
+			break;
+		}
+		if ( ! $found ) { $field['layouts'][ $quiz['key'] ] = $quiz; }
+	}
+	return $field;
+}
+add_filter( 'acf/load_field/name=home_sections', 'ukladka_trotuarnoy_plitki_home_quiz_layout' );
+
+/** Extra light hero typography is loaded only for the modal-quiz presentation. */
+add_action( 'wp_enqueue_scripts', static function () {
+	$layouts = (array) get_post_meta( get_queried_object_id(), 'home_sections', true );
+	if ( in_array( 'hero_quiz_modal', $layouts, true ) ) {
+		wp_enqueue_style( 'ukladka-modal-quiz-fonts', 'https://fonts.googleapis.com/css2?family=Manrope:wght@200&display=swap', array(), null );
+	}
+} );
+
+/**
  * Saves ACF JSON in the theme directory.
  *
  * @return string

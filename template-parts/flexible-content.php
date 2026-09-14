@@ -17,11 +17,12 @@ if ( ! is_array( $rows ) ) {
 	return;
 }
 
-if ( 'home_sections' === $field_name && is_front_page() ) {
+if ( 'home_sections' === $field_name && ( is_front_page() || is_page_template( 'front-page.php' ) ) ) {
 	$rows = ukladka_trotuarnoy_plitki_order_home_sections( $rows );
 }
 
 $rendered_index = 0;
+$rendered_seo   = false;
 
 foreach ( $rows as $section_index => $section ) {
 	if ( ! is_array( $section ) || empty( $section['acf_fc_layout'] ) || ! empty( $section['hide_section'] ) ) {
@@ -37,6 +38,14 @@ foreach ( $rows as $section_index => $section ) {
 	$layout    = sanitize_key( (string) $section['acf_fc_layout'] );
 	$template  = ukladka_trotuarnoy_plitki_get_layout_template( $layout, $context );
 	$section_id = ukladka_trotuarnoy_plitki_get_unique_section_id( $section['section_id'] ?? '', $layout );
+
+	if ( in_array( $layout, array( 'seo', 'seo_content' ), true ) ) {
+		if ( $rendered_seo ) {
+			continue;
+		}
+
+		$rendered_seo = true;
+	}
 
 	if ( ! $template ) {
 		continue;

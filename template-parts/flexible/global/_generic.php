@@ -19,30 +19,74 @@ $related = $section['selected_collections'] ?? $section['selected'] ?? $section[
 $gallery = $section['gallery'] ?? array();
 $button_rendered = false;
 
+if ( 'price_table' === $layout && isset( $headers['work'], $headers['includes'], $headers['suitable'], $headers['price'] ) ) {
+	$headers = array(
+		$headers['work'],
+		$headers['includes'],
+		$headers['suitable'],
+		$headers['price'],
+	);
+}
+
 if ( 'price_table' === $layout && ! $headers ) {
 	$headers = array_filter(
 		array(
 			array(
 				'title' => $section['table_header_work_title'] ?? '',
-				'icon'  => $section['table_header_work_icon'] ?? 0,
+				'icon'  => $section['table_header_work_icon'] ?? ( $section['column_headers_work_icon'] ?? 0 ),
 			),
 			array(
 				'title' => $section['table_header_includes_title'] ?? '',
-				'icon'  => $section['table_header_includes_icon'] ?? 0,
+				'icon'  => $section['table_header_includes_icon'] ?? ( $section['column_headers_includes_icon'] ?? 0 ),
 			),
 			array(
 				'title' => $section['table_header_suitable_title'] ?? '',
-				'icon'  => $section['table_header_suitable_icon'] ?? 0,
+				'icon'  => $section['table_header_suitable_icon'] ?? ( $section['column_headers_suitable_icon'] ?? 0 ),
 			),
 			array(
 				'title' => $section['table_header_price_title'] ?? '',
-				'icon'  => $section['table_header_price_icon'] ?? 0,
+				'icon'  => $section['table_header_price_icon'] ?? ( $section['column_headers_price_icon'] ?? 0 ),
 			),
 		),
 		static function ( $header ) {
 			return ! empty( $header['title'] );
 		}
 	);
+}
+
+if ( 'price_table' === $layout && 'portfolio' === ( $args['context'] ?? '' ) ) {
+	$prices_section            = $section;
+	$prices_section['headers'] = $headers;
+	$prices_section['rows']    = $rows;
+
+	if ( empty( $prices_section['note_text'] ) && ! empty( $section['info_text'] ) ) {
+		$prices_section['note_text'] = $section['info_text'];
+	}
+
+	if ( empty( $prices_section['note_icon'] ) && ! empty( $section['info_icon'] ) ) {
+		$prices_section['note_icon'] = $section['info_icon'];
+	}
+
+	if ( empty( $prices_section['cta'] ) || ! is_array( $prices_section['cta'] ) ) {
+		$prices_section['cta'] = array(
+			'icon'             => $section['cta_icon'] ?? 0,
+			'title'            => $section['cta_title'] ?? '',
+			'text'             => $section['cta_text'] ?? '',
+			'button_id'        => $section['button_id'] ?? '',
+			'global_button_id' => $section['global_button_id'] ?? '',
+			'button_text'      => $section['button_text'] ?? '',
+			'button_link'      => $section['button_link'] ?? '',
+			'button_class'     => $section['button_class'] ?? '',
+			'modal_title'      => $section['modal_title'] ?? '',
+		);
+	}
+
+	$prices_args            = $args;
+	$prices_args['section'] = $prices_section;
+	$prices_args['classes'] = array_values( array_unique( array_merge( $args['classes'] ?? array(), array( 'prices', 'prices--background-black' ) ) ) );
+
+	load_template( get_template_directory() . '/template-parts/flexible/pages/prices.php', false, $prices_args );
+	return;
 }
 
 if ( ! $items && is_array( $section['offices'] ?? null ) ) {

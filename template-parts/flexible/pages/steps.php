@@ -42,16 +42,23 @@ $side_card = is_array( $section['side_card'] ?? null ) ? $section['side_card'] :
 				<?php endforeach; ?>
 
 				<?php if ( array_filter( $side_card ) ) : ?>
-					<aside class="steps__side-card">
-						<?php if ( ! empty( $side_card['icon'] ) ) : ?>
-							<?php ukladka_trotuarnoy_plitki_render_image( $side_card['icon'], 'steps__side-icon', 'thumbnail' ); ?>
-						<?php endif; ?>
-						<?php if ( ! empty( $side_card['title'] ) ) : ?><h3><?php echo ukladka_trotuarnoy_plitki_format_heading( $side_card['title'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></h3><?php endif; ?>
-						<?php if ( ! empty( $side_card['text'] ) ) : ?><p><?php echo esc_html( $side_card['text'] ); ?></p><?php endif; ?>
-						<?php if ( ! empty( $side_card['button_heading'] ) ) : ?><strong><?php echo esc_html( $side_card['button_heading'] ); ?></strong><?php endif; ?>
-						<?php ukladka_trotuarnoy_plitki_render_button( $side_card, 'steps__side-button' ); ?>
+					<aside class="steps__side-card work-steps__side-card">
+						<div class="steps__side-content work-steps__side-content">
+							<?php if ( ! empty( $side_card['icon'] ) ) : ?>
+								<?php ukladka_trotuarnoy_plitki_render_image( $side_card['icon'], 'steps__side-icon work-steps__side-icon', 'thumbnail' ); ?>
+							<?php endif; ?>
+							<div class="steps__side-copy work-steps__side-copy">
+								<?php if ( ! empty( $side_card['title'] ) ) : ?><h3 class="steps__side-title work-steps__side-title"><?php echo ukladka_trotuarnoy_plitki_format_heading( $side_card['title'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></h3><?php endif; ?>
+								<?php if ( ! empty( $side_card['text'] ) ) : ?><p class="steps__side-text work-steps__side-text"><?php echo esc_html( $side_card['text'] ); ?></p><?php endif; ?>
+							</div>
+						</div>
+						<div class="steps__side-action work-steps__side-action">
+							<?php if ( ! empty( $side_card['button_heading'] ) ) : ?><strong class="steps__side-heading work-steps__side-heading"><?php echo esc_html( $side_card['button_heading'] ); ?></strong><?php endif; ?>
+							<?php ukladka_trotuarnoy_plitki_render_button( $side_card, 'steps__side-button work-steps__side-button' ); ?>
+						</div>
 					</aside>
 				<?php endif; ?>
+
 			</div>
 		</div>
 	</div>

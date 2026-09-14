@@ -11,6 +11,7 @@ $section = is_array( $args['section'] ?? null ) ? $args['section'] : array();
 	<div class="container">
 		<div class="object-cta__wrapper">
 			<?php ukladka_trotuarnoy_plitki_render_image( $section['icon'] ?? 0, 'object-cta__icon', 'thumbnail' ); ?>
+			<span class="object-cta__divider" aria-hidden="true"></span>
 			<div class="object-cta__content">
 				<?php if ( ! empty( $section['title'] ) ) : ?><h2 class="object-cta__title"><?php echo esc_html( $section['title'] ); ?></h2><?php endif; ?>
 				<?php if ( ! empty( $section['text'] ) ) : ?><div class="object-cta__text"><?php echo wp_kses_post( wpautop( $section['text'] ) ); ?></div><?php endif; ?>

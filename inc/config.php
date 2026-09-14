@@ -31,6 +31,8 @@ function ukladka_trotuarnoy_plitki_asset_version( $relative_path ) {
  */
 function ukladka_trotuarnoy_plitki_order_home_sections( $rows ) {
 	$layout_order = array(
+		'hero_quiz',
+		'hero_quiz_modal',
 		'hero',
 		'completed_works',
 		'before_after',

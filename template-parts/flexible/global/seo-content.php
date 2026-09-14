@@ -30,7 +30,7 @@ if ( ! in_array( 'seo', $classes, true ) ) {
 						</div>
 					</aside>
 				<?php elseif ( 'accordion' === ( $item['section_type'] ?? '' ) ) : ?>
-					<details class="seo-content__section seo-content__section--accordion"<?php echo ! empty( $item['opened_by_default'] ) ? ' open' : ''; ?>>
+					<details class="seo-content__section seo-content__section--accordion">
 						<summary class="seo-content__summary"><?php echo esc_html( $item['title'] ?? '' ); ?></summary>
 						<div class="seo-content__body">
 							<?php ukladka_trotuarnoy_plitki_render_content_value( $item['content'] ?? array(), 'content', 'seo-content' ); ?>

@@ -39,7 +39,8 @@ $cta_after  = absint( $section['cta']['insert_after'] ?? 0 );
 
 if ( ! empty( $section['cta'] ) ) {
 	$cta = is_array( $section['cta'] ) ? $section['cta'] : array();
-	$cta_note_text = $cta['note_text'] ?? $cta['note'] ?? '';
+	$cta_note_icon = $cta['note_icon'] ?? $cta['button_note_icon'] ?? 0;
+	$cta_note_text = $cta['note_text'] ?? $cta['note'] ?? $cta['button_note'] ?? '';
 	ob_start();
 	?>
 	<article class="reviews-cta__item">
@@ -58,10 +59,10 @@ if ( ! empty( $section['cta'] ) ) {
 			</div>
 			<div class="reviews-cta__actions">
 				<?php ukladka_trotuarnoy_plitki_render_button( $cta, 'reviews-cta__item-button' ); ?>
-				<?php if ( ! empty( $cta['note_icon'] ) || ! empty( $cta_note_text ) ) : ?>
+				<?php if ( ! empty( $cta_note_icon ) || ! empty( $cta_note_text ) ) : ?>
 					<div class="reviews-cta__note">
-						<?php if ( ! empty( $cta['note_icon'] ) ) : ?>
-							<span class="reviews-cta__note-icon"><?php ukladka_trotuarnoy_plitki_render_image( $cta['note_icon'], 'reviews-cta__note-icon-image', 'thumbnail' ); ?></span>
+						<?php if ( ! empty( $cta_note_icon ) ) : ?>
+							<span class="reviews-cta__note-icon"><?php ukladka_trotuarnoy_plitki_render_image( $cta_note_icon, 'reviews-cta__note-icon-image', 'thumbnail' ); ?></span>
 						<?php endif; ?>
 						<?php if ( ! empty( $cta_note_text ) ) : ?>
 							<div class="reviews-cta__note-text"><?php echo wp_kses_post( wpautop( $cta_note_text ) ); ?></div>

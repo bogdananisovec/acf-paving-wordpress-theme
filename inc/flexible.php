@@ -20,7 +20,7 @@ function ukladka_trotuarnoy_plitki_get_page_class( $post_id = 0 ) {
 		$slug    = $post_id ? get_post_field( 'post_name', $post_id ) : '';
 	}
 
-	if ( is_front_page() ) {
+	if ( is_front_page() || 'front-page.php' === get_page_template_slug( $post_id ?: get_queried_object_id() ) ) {
 		$slug = 'home';
 	}
 

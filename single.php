@@ -22,6 +22,10 @@ if ( ! function_exists( 'ukladka_trotuarnoy_plitki_article_classes' ) ) {
 			$classes[] = $base . '--dark';
 		}
 
+		if ( 'beige' === $background ) {
+			$classes[] = $base . '--beige';
+		}
+
 		if ( ! empty( $row['section_class'] ) ) {
 			$classes = array_merge( $classes, preg_split( '/\s+/', (string) $row['section_class'] ) );
 		}
@@ -30,31 +34,114 @@ if ( ! function_exists( 'ukladka_trotuarnoy_plitki_article_classes' ) ) {
 	}
 }
 
+if ( ! function_exists( 'ukladka_trotuarnoy_plitki_prepare_article_sections' ) ) {
+	/**
+	 * Adds shared FAQ/SEO rows when article rows do not contain their own content.
+	 *
+	 * @param array $rows Article flexible rows.
+	 * @return array
+	 */
+	function ukladka_trotuarnoy_plitki_prepare_article_sections( $rows ) {
+		if ( ! is_array( $rows ) ) {
+			return array();
+		}
+
+		$has_faq = false;
+		$has_seo = false;
+
+		foreach ( $rows as $section ) {
+			if ( ! is_array( $section ) ) {
+				continue;
+			}
+
+			$layout = (string) ( $section['acf_fc_layout'] ?? '' );
+
+			if ( 'faq' === $layout ) {
+				$faq_items = (array) ( $section['faq_items'] ?? $section['items'] ?? array() );
+
+				foreach ( $faq_items as $faq_item ) {
+					if ( ! empty( $faq_item['question'] ) || ! empty( $faq_item['answer'] ) ) {
+						$has_faq = true;
+						break;
+					}
+				}
+			}
+
+			if ( in_array( $layout, array( 'seo', 'seo_content' ), true ) ) {
+				$seo_items = (array) ( $section['seo_items'] ?? $section['seo_sections'] ?? $section['items'] ?? array() );
+
+				foreach ( $seo_items as $seo_item ) {
+					if ( ! empty( $seo_item['title'] ) || ( function_exists( 'ukladka_trotuarnoy_plitki_section_has_content' ) && ukladka_trotuarnoy_plitki_section_has_content( $seo_item ) ) ) {
+						$has_seo = true;
+						break;
+					}
+				}
+			}
+		}
+
+		if ( $has_faq && $has_seo || ! function_exists( 'get_field' ) ) {
+			return $rows;
+		}
+
+		$cost_page = get_page_by_path( 'stoimost-ukladki-trotuarnoj-plitki' );
+		$shared    = $cost_page ? get_field( 'page_sections', $cost_page->ID ) : array();
+
+		foreach ( (array) $shared as $shared_section ) {
+			$layout = $shared_section['acf_fc_layout'] ?? '';
+
+			if ( ! $has_faq && 'faq' === $layout ) {
+				$rows[]  = $shared_section;
+				$has_faq = true;
+			}
+
+			if ( ! $has_seo && 'seo_content' === $layout ) {
+				$rows[]  = $shared_section;
+				$has_seo = true;
+			}
+
+			if ( $has_faq && $has_seo ) {
+				break;
+			}
+		}
+
+		return $rows;
+	}
+}
+
 if ( ! function_exists( 'ukladka_trotuarnoy_plitki_render_article_sections' ) ) {
 	/**
 	 * Renders ACF article flexible content.
 	 *
 	 * @param array $rows Article flexible rows.
+	 * @param int   $post_id Current post ID.
 	 * @return string
 	 */
-	function ukladka_trotuarnoy_plitki_render_article_sections( $rows ) {
+	function ukladka_trotuarnoy_plitki_render_article_sections( $rows, $post_id = 0 ) {
 		if ( ! is_array( $rows ) ) {
 			return '';
 		}
 
 		ob_start();
 
+		$rendered_index = 0;
+
 		foreach ( $rows as $row ) {
 			if ( ! is_array( $row ) || ! empty( $row['hide_section'] ) ) {
 				continue;
 			}
 
-			$layout = (string) ( $row['acf_fc_layout'] ?? '' );
+			$layout = sanitize_key( (string) ( $row['acf_fc_layout'] ?? '' ) );
+
+			if ( ! $layout || ( function_exists( 'ukladka_trotuarnoy_plitki_section_has_content' ) && ! ukladka_trotuarnoy_plitki_section_has_content( $row ) ) ) {
+				continue;
+			}
+
+			$section_index_class = 'section-index-' . ( ++$rendered_index );
 
 			if ( 'article_content' === $layout ) {
 				$image_id = ukladka_trotuarnoy_plitki_get_image_id( $row['image'] ?? 0 );
 				?>
-				<section class="<?php echo esc_attr( ukladka_trotuarnoy_plitki_article_classes( 'article-design-section', $row ) ); ?>">
+				<section class="<?php echo esc_attr( ukladka_trotuarnoy_plitki_article_classes( 'article-design-section', $row, array( $section_index_class ) ) ); ?>">
 					<div class="article-design-section__inner">
 						<?php if ( ! empty( $row['title'] ) ) : ?>
 							<h2><?php echo esc_html( $row['title'] ); ?></h2>
@@ -68,48 +155,38 @@ if ( ! function_exists( 'ukladka_trotuarnoy_plitki_render_article_sections' ) ) 
 				</section>
 				<?php
 			} elseif ( 'article_cta' === $layout ) {
+				$background_image_id = ukladka_trotuarnoy_plitki_get_image_id( $row['background_image'] ?? 0 );
+				$cta_text = wp_kses_post( (string) ( $row['text'] ?? '' ) );
+				if ( 3 === $rendered_index && 'ukladka-trotuarnoj-plitki-na-betonnoe-osnovanie' === get_post_field( 'post_name', $post_id ) && 1 === substr_count( $cta_text, '<p>' ) ) {
+					$cta_text = preg_replace( '/(<p>)([^<]+?\.)(\s+)(?=[^<])/u', '$1<span class="article-design-summary__lead">$2</span>$3', $cta_text, 1 );
+				}
 				?>
-				<section class="<?php echo esc_attr( ukladka_trotuarnoy_plitki_article_classes( 'article-design-section', $row, array( 'article-design-summary' ) ) ); ?>">
-					<div class="article-design-section__inner">
-						<?php if ( ! empty( $row['title'] ) ) : ?>
-							<h2><?php echo esc_html( $row['title'] ); ?></h2>
+				<section class="<?php echo esc_attr( ukladka_trotuarnoy_plitki_article_classes( 'article-design-section', $row, array( 'article-design-summary', $section_index_class ) ) ); ?>">
+					<div class="article-design-summary__inner">
+						<?php if ( $background_image_id ) : ?>
+							<figure class="article-design-summary__media">
+								<?php echo wp_get_attachment_image( $background_image_id, 'full', false, array( 'loading' => 'lazy' ) ); ?>
+							</figure>
 						<?php endif; ?>
-						<?php echo wp_kses_post( (string) ( $row['text'] ?? '' ) ); ?>
-						<?php
-						if ( function_exists( 'ukladka_trotuarnoy_plitki_render_button' ) ) {
-							ukladka_trotuarnoy_plitki_render_button(
-								array(
-									'global_button_id' => $row['global_button_id'] ?? '',
-									'button_text'      => $row['button_text'] ?? '',
-									'button_link'      => $row['button_link'] ?? '',
-									'modal_title'      => $row['modal_title'] ?? '',
-								)
-							);
-						}
-						?>
-					</div>
-				</section>
-				<?php
-			} elseif ( 'faq' === $layout ) {
-				$items = is_array( $row['items'] ?? null ) ? $row['items'] : array();
-				?>
-				<section class="<?php echo esc_attr( ukladka_trotuarnoy_plitki_article_classes( 'article-design-faq', $row ) ); ?>">
-					<div class="article-design-section__inner">
-						<?php if ( ! empty( $row['title'] ) ) : ?>
-							<h2><?php echo esc_html( $row['title'] ); ?></h2>
-						<?php endif; ?>
-						<?php if ( $items ) : ?>
-							<div class="article-design-faq__grid">
-								<?php foreach ( $items as $item ) : ?>
-									<article>
-										<?php if ( ! empty( $item['question'] ) ) : ?>
-											<h3><?php echo esc_html( $item['question'] ); ?></h3>
-										<?php endif; ?>
-										<?php echo wp_kses_post( (string) ( $item['answer'] ?? '' ) ); ?>
-									</article>
-								<?php endforeach; ?>
-							</div>
-						<?php endif; ?>
+						<div class="article-design-summary__content">
+							<?php if ( ! empty( $row['title'] ) ) : ?>
+								<h2><?php echo esc_html( $row['title'] ); ?></h2>
+							<?php endif; ?>
+							<div class="article-design-summary__text"><?php echo $cta_text; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Sanitized above. ?></div>
+							<?php
+							if ( function_exists( 'ukladka_trotuarnoy_plitki_render_button' ) ) {
+								ukladka_trotuarnoy_plitki_render_button(
+									array(
+										'global_button_id' => $row['global_button_id'] ?? '',
+										'button_text'      => $row['button_text'] ?? '',
+										'button_link'      => $row['button_link'] ?? '',
+										'modal_title'      => $row['modal_title'] ?? '',
+									),
+									'button button--has-icon article-design-summary__button btn btn-cta'
+								);
+							}
+							?>
+						</div>
 					</div>
 				</section>
 				<?php
@@ -118,6 +195,10 @@ if ( ! function_exists( 'ukladka_trotuarnoy_plitki_render_article_sections' ) ) 
 
 		return ob_get_clean();
 	}
+}
+
+if ( 'ukladka-trotuarnoj-plitki-na-betonnoe-osnovanie' === get_post_field( 'post_name', get_queried_object_id() ) ) {
+	wp_enqueue_style( 'article-cta-font', 'https://fonts.googleapis.com/css2?family=Manrope:wght@500&display=swap', array(), null, '(max-width: 767px)' );
 }
 
 get_header();
@@ -133,6 +214,7 @@ get_header();
 			$article_show_toc  = true;
 			$article_toc_title = __( 'Содержание:', 'ukladka-trotuarnoy-plitki' );
 			$article_has_acf_content = false;
+			$article_shared_rows = array();
 			$skip_toc_titles   = array(
 				'ВОПРОСЫ И ОТВЕТЫ',
 				'ЗАКАЖИТЕ',
@@ -155,7 +237,19 @@ get_header();
 				}
 
 				if ( is_array( $article_acf_rows ) && ! empty( $article_acf_rows ) ) {
-					$article_acf_content = ukladka_trotuarnoy_plitki_render_article_sections( $article_acf_rows );
+					$article_acf_rows    = ukladka_trotuarnoy_plitki_prepare_article_sections( $article_acf_rows );
+					foreach ( $article_acf_rows as $section_index => $section ) {
+						$layout = $section['acf_fc_layout'] ?? '';
+						if ( in_array( $layout, array( 'faq', 'seo', 'seo_content' ), true ) ) {
+							if ( 'seo_content' === $layout ) {
+								$section['acf_fc_layout'] = 'seo';
+								$section['section_id'] = 'seo-content';
+							}
+							$article_shared_rows[ $section_index ] = $section;
+							unset( $article_acf_rows[ $section_index ] );
+						}
+					}
+					$article_acf_content = ukladka_trotuarnoy_plitki_render_article_sections( $article_acf_rows, get_the_ID() );
 
 					if ( '' !== trim( $article_acf_content ) ) {
 						$article_content         = $article_acf_content;
@@ -177,7 +271,9 @@ get_header();
 					if ( preg_match( '/\sid=["\']([^"\']+)["\']/i', $attributes, $id_match ) ) {
 						$id = $id_match[1];
 					} else {
-						$id   = sanitize_title( $title );
+						$anchor_title = function_exists( 'cyr_to_lat' ) ? cyr_to_lat()->transliterate( $title ) : $title;
+						$id   = trim( preg_replace( '/[^a-z0-9_-]+/', '', sanitize_title( $anchor_title ) ), '-' );
+						$id   = $id ?: 'section-' . ( count( $article_ids ) + 1 );
 						$base = $id;
 						$step = 2;
 
@@ -313,23 +409,31 @@ get_header();
 				</header>
 
 				<div class="article__content">
-					<div class="container">
-						<div class="article__content-wrapper">
-							<?php echo $article_content; ?>
+					<?php if ( $article_has_acf_content ) : ?>
+						<?php echo $article_content; ?>
+					<?php else : ?>
+						<div class="container">
+							<div class="article__content-wrapper">
+								<?php echo $article_content; ?>
+							</div>
 						</div>
-					</div>
+					<?php endif; ?>
 				</div>
 
-				<footer class="article__footer">
-					<div class="container">
-						<div class="article__footer-wrapper">
-							<strong><?php esc_html_e( 'Поделиться статьей', 'ukladka-trotuarnoy-plitki' ); ?></strong>
-							<a class="button button--outline" href="<?php echo esc_url( get_post_type_archive_link( 'post' ) ?: home_url( '/' ) ); ?>"><?php esc_html_e( 'Все статьи', 'ukladka-trotuarnoy-plitki' ); ?></a>
-						</div>
-					</div>
-				</footer>
 			</article>
 			<?php
+			if ( $article_shared_rows ) {
+				get_template_part(
+					'template-parts/flexible-content',
+					null,
+					array(
+						'field_name' => 'article_sections',
+						'post_id' => get_the_ID(),
+						'context' => 'portfolio',
+						'rows' => $article_shared_rows,
+					)
+				);
+			}
 		endwhile;
 		?>
 	</main>

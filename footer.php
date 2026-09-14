@@ -13,6 +13,18 @@ $phone_icon   = ukladka_trotuarnoy_plitki_get_option( 'footer_phone_icon', 0 );
 $hours        = ukladka_trotuarnoy_plitki_get_option( 'work_hours', 'Ежедневно с 9:00 до 22:00' );
 $address      = ukladka_trotuarnoy_plitki_get_option( 'site_address', '' );
 $modals       = (array) ukladka_trotuarnoy_plitki_get_option( 'site_modals', array() );
+if ( function_exists( 'get_fields' ) ) {
+	$form_posts = get_posts( array( 'post_type' => 'site_form', 'post_status' => 'publish', 'posts_per_page' => -1, 'orderby' => 'menu_order ID', 'order' => 'ASC' ) );
+	foreach ( $form_posts as $form_post ) {
+		$form_fields = get_fields( $form_post->ID );
+		if ( is_array( $form_fields ) && ! empty( $form_fields['form_id'] ) ) {
+			$modals = array_filter( $modals, static function ( $modal ) use ( $form_fields ) {
+				return ( $modal['modal_id'] ?? $modal['form_id'] ?? '' ) !== $form_fields['form_id'];
+			} );
+			$modals[] = $form_fields;
+		}
+	}
+}
 $email        = sanitize_email( ukladka_trotuarnoy_plitki_get_option( 'site_email', get_option( 'admin_email' ) ) );
 $email_icon   = ukladka_trotuarnoy_plitki_get_option( 'footer_email_icon', 0 );
 $show_copy_email = function_exists( 'get_field' ) ? (bool) get_field( 'show_copy_email_button', 'option' ) : true;
@@ -213,9 +225,10 @@ $footer_render_menu_link = static function ( $menu_item ) {
 			array(
 				'modal_id'         => 'callback',
 				'title'            => 'Закажите бесплатный выезд мастера!',
+				'subtitle'         => 'Привезём образцы плит для подбора',
 				'phone_label'      => 'Введите ваш номер телефона',
 				'messenger_label'  => 'Какой способ связи удобнее?',
-				'phone_placeholder' => '+7 (___) ___-__-__',
+				'phone_placeholder' => '+7 (999) 999-99-99',
 				'messengers'       => array(
 					array(
 						'label'    => 'Звонок',
@@ -243,30 +256,42 @@ $footer_render_menu_link = static function ( $menu_item ) {
 	}
 
 	foreach ( $modals as $modal ) :
-		if ( empty( $modal['is_active'] ) || empty( $modal['modal_id'] ) ) {
+		$raw_modal_id = ukladka_trotuarnoy_plitki_first_value( $modal, array( 'modal_id', 'form_id' ) );
+
+		if ( empty( $modal['is_active'] ) || ! $raw_modal_id ) {
 			continue;
 		}
-		$modal_id = sanitize_title( $modal['modal_id'] );
+		$modal_id = sanitize_title( $raw_modal_id );
+		$modal_title = ukladka_trotuarnoy_plitki_first_value( $modal, array( 'title', 'heading' ) );
+		$modal_subtitle = ukladka_trotuarnoy_plitki_first_value( $modal, array( 'subtitle', 'subheading' ) );
+		$phone_label = ukladka_trotuarnoy_plitki_first_value( $modal, array( 'phone_label', 'phone_step_title' ) );
+		$messenger_label = ukladka_trotuarnoy_plitki_first_value( $modal, array( 'messenger_label', 'contact_step_title' ) );
+		$messengers = ! empty( $modal['messengers'] ) ? (array) $modal['messengers'] : (array) ( $modal['contact_methods'] ?? array() );
 		?>
 		<div class="site-modal" id="<?php echo esc_attr( $modal_id ); ?>" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="<?php echo esc_attr( $modal_id ); ?>-title">
 			<div class="site-modal__backdrop" data-modal-close></div>
 			<div class="site-modal__dialog">
 				<button class="site-modal__close" type="button" data-modal-close aria-label="<?php esc_attr_e( 'Закрыть', 'ukladka-trotuarnoy-plitki' ); ?>">× <span>Закрыть</span></button>
-				<h2 class="site-modal__title" id="<?php echo esc_attr( $modal_id ); ?>-title"><?php echo esc_html( $modal['title'] ?? '' ); ?></h2>
+				<div class="site-modal__header">
+					<h2 class="site-modal__title" id="<?php echo esc_attr( $modal_id ); ?>-title"><?php echo wp_kses_post( nl2br( esc_html( $modal_title ) ) ); ?></h2>
+					<?php if ( $modal_subtitle ) : ?>
+						<p class="site-modal__subtitle"><?php echo esc_html( $modal_subtitle ); ?></p>
+					<?php endif; ?>
+				</div>
 				<form class="site-modal__form" method="post" data-site-form data-form-id="<?php echo esc_attr( $modal_id ); ?>">
 					<label class="screen-reader-text" aria-hidden="true">Сайт<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
 					<label class="site-modal__field">
-						<span class="site-modal__field-label"><b>01</b><?php echo esc_html( $modal['phone_label'] ?? 'Номер телефона' ); ?></span>
+						<span class="site-modal__field-label"><b>01</b><?php echo esc_html( $phone_label ?: 'Номер телефона' ); ?></span>
 						<input type="tel" name="phone" placeholder="<?php echo esc_attr( $modal['phone_placeholder'] ?? '+7 (___) ___-__-__' ); ?>" required>
 					</label>
-					<?php if ( ! empty( $modal['messengers'] ) ) : ?>
+					<?php if ( $messengers ) : ?>
 						<fieldset class="site-modal__messengers">
-							<legend class="site-modal__field-label"><b>02</b><?php echo esc_html( $modal['messenger_label'] ?? 'Какой способ связи удобнее?' ); ?></legend>
+							<legend class="site-modal__field-label"><b>02</b><?php echo esc_html( $messenger_label ?: 'Какой способ связи удобнее?' ); ?></legend>
 							<div class="site-modal__messenger-options">
-								<?php foreach ( (array) $modal['messengers'] as $messenger_index => $messenger ) : ?>
+								<?php foreach ( $messengers as $messenger_index => $messenger ) : ?>
 									<?php
 									$messenger_value = sanitize_key( $messenger['value'] ?? $messenger['contact_id'] ?? 'messenger-' . $messenger_index );
-									$is_selected     = ! empty( $messenger['selected'] ) || ( 0 === $messenger_index && ! array_filter( array_column( (array) $modal['messengers'], 'selected' ) ) );
+									$is_selected     = ! empty( $messenger['selected'] ) || ( 0 === $messenger_index && ! array_filter( array_column( $messengers, 'selected' ) ) );
 									?>
 									<label class="site-modal__messenger">
 										<input type="radio" name="messenger" value="<?php echo esc_attr( $messenger_value ); ?>" <?php checked( $is_selected ); ?>>
@@ -287,7 +312,11 @@ $footer_render_menu_link = static function ( $menu_item ) {
 							<span><?php echo wp_kses_post( $modal['privacy_text'] ); ?></span>
 						</label>
 					<?php endif; ?>
-					<button class="button site-modal__submit" type="submit"><?php echo esc_html( $modal['submit_text'] ?? 'Отправить' ); ?></button>
+					<?php $submit_button = ukladka_trotuarnoy_plitki_resolve_button( array( 'button_id' => $callback_button_id ) ); ?>
+					<button class="button site-modal__submit<?php echo ! empty( $submit_button['icon'] ) ? ' button--has-icon' : ''; ?>" type="submit">
+						<span class="button__text"><?php echo esc_html( $modal['submit_text'] ?? 'Отправить' ); ?></span>
+						<?php if ( ! empty( $submit_button['icon'] ) ) { ukladka_trotuarnoy_plitki_render_image( $submit_button['icon'], 'button__icon', 'thumbnail' ); } ?>
+					</button>
 				</form>
 			</div>
 		</div>

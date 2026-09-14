@@ -16,6 +16,11 @@ if ( $calculator_theme ) {
 	$args['classes'][] = 'calculator--theme-' . $calculator_theme;
 }
 
+if ( 'portfolio' === ( $args['context'] ?? '' ) && ! is_post_type_archive( 'portfolio' ) ) {
+	$args['classes'][] = 'page-home';
+	$args['classes'][] = 'page-portfolio';
+}
+
 if ( $calculator_id && function_exists( 'get_field' ) ) {
 	$title = $title ?: get_field( 'calculator_title', $calculator_id );
 	$text  = $text ?: get_field( 'calculator_description', $calculator_id );

@@ -111,6 +111,9 @@ if ( $is_private_yard_page ) {
 								<?php endif; ?>
 							</div>
 						<?php endif; ?>
+						<?php if ( ! empty( $section['side_text'] ) ) : ?>
+							<div class="hero__side-text hero__side-text--mobile"><?php echo wp_kses_post( wpautop( $section['side_text'] ) ); ?></div>
+						<?php endif; ?>
 					</div>
 					<div class="hero__review-summary">
 						<?php if ( ! empty( $contact['reviews_count'] ) ) : ?><span class="hero__review-count"><?php echo esc_html( $contact['reviews_count'] ); ?></span><?php endif; ?>
@@ -140,6 +143,7 @@ if ( $is_private_yard_page ) {
 				<div class="hero__items">
 					<?php foreach ( (array) $hero_items as $index => $item ) : ?>
 						<div class="hero__item">
+							<?php if ( ! empty( $item['icon'] ) ) : ?><span class="hero__item-icon"><?php ukladka_trotuarnoy_plitki_render_image( $item['icon'], 'hero__item-icon-image', 'thumbnail' ); ?></span><?php endif; ?>
 							<?php if ( ! empty( $item['number'] ) ) : ?><span class="hero__item-number"><?php echo esc_html( $item['number'] ); ?></span><?php endif; ?>
 							<div class="hero__item-content">
 								<?php if ( ! empty( $item['title'] ) ) : ?><h3 class="hero__item-title"><?php echo esc_html( $item['title'] ); ?></h3><?php endif; ?>

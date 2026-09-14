@@ -490,7 +490,11 @@
                 "instructions": "",
                 "required": 0,
                 "conditional_logic": 0,
-                "wrapper": { "width": "", "class": "", "id": "" },
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
                 "return_format": "id",
                 "library": "all",
                 "preview_size": "thumbnail",
@@ -566,7 +570,11 @@
                 "instructions": "Оставьте пустым, чтобы использовать текст глобальной кнопки.",
                 "required": 0,
                 "conditional_logic": 0,
-                "wrapper": { "width": "", "class": "", "id": "" },
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
                 "default_value": "",
                 "maxlength": "",
                 "placeholder": ""
@@ -600,7 +608,11 @@
                 "instructions": "",
                 "required": 0,
                 "conditional_logic": 0,
-                "wrapper": { "width": "", "class": "", "id": "" },
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
                 "return_format": "id",
                 "library": "all",
                 "preview_size": "thumbnail",
@@ -615,7 +627,11 @@
                 "instructions": "",
                 "required": 0,
                 "conditional_logic": 0,
-                "wrapper": { "width": "", "class": "", "id": "" },
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
                 "message": "",
                 "default_value": 0,
                 "ui": 1,
@@ -1435,8 +1451,20 @@
                         "type": "text",
                         "instructions": "",
                         "required": 0,
-                        "conditional_logic": [[{"field":"field_calc_step_type","operator":"==","value":"contacts"}]],
-                        "wrapper": { "width": "", "class": "", "id": "" },
+                        "conditional_logic": [
+                            [
+                                {
+                                    "field": "field_calc_step_type",
+                                    "operator": "==",
+                                    "value": "contacts"
+                                }
+                            ]
+                        ],
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
                         "default_value": "",
                         "maxlength": "",
                         "placeholder": ""

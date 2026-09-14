@@ -54,10 +54,13 @@ $submit_icon   = ukladka_trotuarnoy_plitki_get_image_id( $submit_button['icon'] 
 				data-photo-estimate
 				data-form-id="photo-estimate"
 				data-upload-limit="<?php echo esc_attr( $upload_limit ); ?>"
+				data-current-step="1"
 			>
 				<label class="screen-reader-text" aria-hidden="true">Сайт<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
 
-				<div class="photo-estimate__fields">
+				<div class="photo-estimate__step is-active" data-photo-step="1">
+					<span class="photo-estimate__step-badge">Шаг 1 из 5</span>
+					<div class="photo-estimate__fields">
 					<label class="photo-estimate__field">
 						<span class="photo-estimate__label"><b>01</b><?php echo esc_html( $section['name_label'] ?? 'Имя' ); ?></span>
 						<input class="photo-estimate__input" type="text" name="name" placeholder="<?php echo esc_attr( $section['name_placeholder'] ?? 'Ваше имя' ); ?>" autocomplete="name">
@@ -66,23 +69,20 @@ $submit_icon   = ukladka_trotuarnoy_plitki_get_image_id( $submit_button['icon'] 
 						<span class="photo-estimate__label"><b>02</b><?php echo esc_html( $section['phone_label'] ?? 'Телефон' ); ?></span>
 						<input class="photo-estimate__input" type="tel" name="phone" placeholder="<?php echo esc_attr( $section['phone_placeholder'] ?? '+7 (999) 999-99-99' ); ?>" autocomplete="tel" required>
 					</label>
+					</div>
+					<div class="photo-estimate__step-actions photo-estimate__step-actions--end">
+						<button class="photo-estimate__step-button photo-estimate__step-button--next" type="button" data-photo-next>
+							<span>Далее</span>
+							<?php if ( $submit_icon ) : ?>
+								<?php ukladka_trotuarnoy_plitki_render_image( $submit_icon, 'photo-estimate__step-icon', 'full' ); ?>
+							<?php endif; ?>
+						</button>
+					</div>
+				</div>
 
-					<?php if ( $methods ) : ?>
-						<label class="photo-estimate__field">
-							<span class="photo-estimate__label"><b>03</b><?php echo esc_html( $section['contact_method_label'] ?? 'Выберите способ связи' ); ?></span>
-							<span class="photo-estimate__select-wrap">
-								<?php if ( $select_icon ) : ?>
-									<?php ukladka_trotuarnoy_plitki_render_image( $select_icon, 'photo-estimate__select-icon', 'full' ); ?>
-								<?php endif; ?>
-								<select class="photo-estimate__select" name="contact_method">
-									<?php foreach ( $methods as $method ) : ?>
-										<option value="<?php echo esc_attr( sanitize_key( $method['value'] ?? '' ) ); ?>"><?php echo esc_html( $method['label'] ?? '' ); ?></option>
-									<?php endforeach; ?>
-								</select>
-							</span>
-						</label>
-					<?php endif; ?>
-
+				<div class="photo-estimate__step" data-photo-step="2">
+					<span class="photo-estimate__step-badge">Шаг 2 из 5</span>
+					<div class="photo-estimate__fields">
 					<label class="photo-estimate__field">
 						<span class="photo-estimate__label"><b>04</b><?php echo esc_html( $section['area_label'] ?? 'Примерная площадь участка, м²' ); ?></span>
 						<span class="photo-estimate__area">
@@ -90,9 +90,39 @@ $submit_icon   = ukladka_trotuarnoy_plitki_get_image_id( $submit_button['icon'] 
 							<span aria-hidden="true">м²</span>
 						</span>
 					</label>
+					<?php if ( $methods ) : ?>
+						<fieldset class="photo-estimate__field photo-estimate__contact">
+							<span class="photo-estimate__label"><b>03</b><?php echo esc_html( $section['contact_method_label'] ?? 'Выберите способ связи' ); ?></span>
+							<div class="photo-estimate__contact-list">
+								<?php foreach ( $methods as $method_index => $method ) : ?>
+									<label class="photo-estimate__contact-method">
+										<input type="radio" name="contact_method" value="<?php echo esc_attr( sanitize_key( $method['value'] ?? '' ) ); ?>" <?php checked( 0, $method_index ); ?>>
+										<span><?php echo esc_html( $method['label'] ?? '' ); ?></span>
+									</label>
+								<?php endforeach; ?>
+							</div>
+						</fieldset>
+					<?php endif; ?>
+					</div>
+					<div class="photo-estimate__step-actions">
+						<button class="photo-estimate__step-button photo-estimate__step-button--prev" type="button" data-photo-prev>
+							<?php if ( $submit_icon ) : ?>
+								<?php ukladka_trotuarnoy_plitki_render_image( $submit_icon, 'photo-estimate__step-icon', 'full' ); ?>
+							<?php endif; ?>
+							<span>Назад</span>
+						</button>
+						<button class="photo-estimate__step-button photo-estimate__step-button--next" type="button" data-photo-next>
+							<span>Далее</span>
+							<?php if ( $submit_icon ) : ?>
+								<?php ukladka_trotuarnoy_plitki_render_image( $submit_icon, 'photo-estimate__step-icon', 'full' ); ?>
+							<?php endif; ?>
+						</button>
+					</div>
 				</div>
 
 				<?php if ( $tasks ) : ?>
+					<div class="photo-estimate__step" data-photo-step="3">
+					<span class="photo-estimate__step-badge">Шаг 3 из 5</span>
 					<fieldset class="photo-estimate__tasks">
 						<legend class="photo-estimate__legend"><b>05</b><?php echo esc_html( preg_replace( '/^05\s*/u', '', (string) ( $section['tasks_title'] ?? 'Что нужно сделать?' ) ) ); ?></legend>
 						<?php if ( ! empty( $section['tasks_note'] ) ) : ?><p class="photo-estimate__hint"><?php echo esc_html( $section['tasks_note'] ); ?></p><?php endif; ?>
@@ -105,8 +135,25 @@ $submit_icon   = ukladka_trotuarnoy_plitki_get_image_id( $submit_button['icon'] 
 							<?php endforeach; ?>
 						</div>
 					</fieldset>
+					<div class="photo-estimate__step-actions">
+						<button class="photo-estimate__step-button photo-estimate__step-button--prev" type="button" data-photo-prev>
+							<?php if ( $submit_icon ) : ?>
+								<?php ukladka_trotuarnoy_plitki_render_image( $submit_icon, 'photo-estimate__step-icon', 'full' ); ?>
+							<?php endif; ?>
+							<span>Назад</span>
+						</button>
+						<button class="photo-estimate__step-button photo-estimate__step-button--next" type="button" data-photo-next>
+							<span>Далее</span>
+							<?php if ( $submit_icon ) : ?>
+								<?php ukladka_trotuarnoy_plitki_render_image( $submit_icon, 'photo-estimate__step-icon', 'full' ); ?>
+							<?php endif; ?>
+						</button>
+					</div>
+					</div>
 				<?php endif; ?>
 
+				<div class="photo-estimate__step" data-photo-step="4">
+				<span class="photo-estimate__step-badge">Шаг 4 из 5</span>
 				<div class="photo-estimate__upload">
 					<span class="photo-estimate__label"><b>06</b><?php echo esc_html( preg_replace( '/^06\s*/u', '', (string) ( $section['upload_title'] ?? 'Загрузка фото' ) ) ); ?></span>
 					<label class="photo-estimate__dropzone">
@@ -131,7 +178,32 @@ $submit_icon   = ukladka_trotuarnoy_plitki_get_image_id( $submit_button['icon'] 
 					</label>
 					<div class="photo-estimate__previews" data-photo-previews aria-live="polite"></div>
 				</div>
+				<div class="photo-estimate__step-actions">
+					<button class="photo-estimate__step-button photo-estimate__step-button--prev" type="button" data-photo-prev>
+						<?php if ( $submit_icon ) : ?>
+							<?php ukladka_trotuarnoy_plitki_render_image( $submit_icon, 'photo-estimate__step-icon', 'full' ); ?>
+						<?php endif; ?>
+						<span>Назад</span>
+					</button>
+					<button class="photo-estimate__step-button photo-estimate__step-button--next" type="button" data-photo-next>
+						<span>Далее</span>
+						<?php if ( $submit_icon ) : ?>
+							<?php ukladka_trotuarnoy_plitki_render_image( $submit_icon, 'photo-estimate__step-icon', 'full' ); ?>
+						<?php endif; ?>
+					</button>
+				</div>
+				</div>
 
+				<div class="photo-estimate__step" data-photo-step="5">
+				<div class="photo-estimate__step-actions photo-estimate__step-actions--top">
+					<button class="photo-estimate__step-button photo-estimate__step-button--prev" type="button" data-photo-prev>
+						<?php if ( $submit_icon ) : ?>
+							<?php ukladka_trotuarnoy_plitki_render_image( $submit_icon, 'photo-estimate__step-icon', 'full' ); ?>
+						<?php endif; ?>
+						<span>Назад</span>
+					</button>
+					<span class="photo-estimate__step-badge">Последний шаг</span>
+				</div>
 				<label class="photo-estimate__comment">
 					<span class="photo-estimate__label"><b>07</b><?php echo esc_html( preg_replace( '/^07\s*/u', '', (string) ( $section['comment_label'] ?? 'Оставьте комментарий' ) ) ); ?></span>
 					<textarea class="photo-estimate__textarea" name="comment" rows="3" placeholder="<?php echo esc_attr( $section['comment_placeholder'] ?? 'Напишите свой текст' ); ?>"></textarea>
@@ -151,6 +223,7 @@ $submit_icon   = ukladka_trotuarnoy_plitki_get_image_id( $submit_button['icon'] 
 							<?php ukladka_trotuarnoy_plitki_render_image( $submit_icon, 'button__icon', 'full' ); ?>
 						<?php endif; ?>
 					</button>
+				</div>
 				</div>
 			</form>
 
